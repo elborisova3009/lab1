@@ -3,7 +3,7 @@
 
 ![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-17-22).png?raw=true)
 ### 	Таблица адресации
-![alt text]([https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-38-31).png](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-38-31).png))
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-38-32).png)
 ### 	Задачи 
 
 Часть 1. Создание сети и проверка настроек коммутатора по умолчанию
