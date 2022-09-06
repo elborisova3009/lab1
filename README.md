@@ -1,6 +1,6 @@
 # Лабораторная работа 1. Базовая настройка коммутатора
 ### Топология
-https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-17-22).png
+[https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-17-22).png](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-17-22).png?raw=true)
 
 ##### Содержание 
 Часть 1. Создание сети и проверка настроек коммутатора по умолчанию
