@@ -42,8 +42,7 @@ c. Изучим файл загрузочной конфигурации (startu
 *Вопрос:* 
 
 Почему появляется сообщение: startup-config is not present?  
-*Типичное сообщение, когда коммутатор конфигурируется впервые (конфиг еще не записан) или сброшен к заводским настройкам.   
-Никто еще не делал запись конфига.*
+*Типичное сообщение, когда коммутатор конфигурируется впервые (конфиг еще не записан) или сброшен к заводским настройкам. Никто еще не делал запись конфига.*
 
 d. Изучим характеристики SVI для VLAN 1.
 
@@ -119,9 +118,76 @@ j.	Изучим флеш-память.
 
 - Настроить IP-адрес для ПК  
 
-![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(17-58-09).png)
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(13-13-15).png)
  
  <a name="3"> Часть 3. Проверить сетевые подключения </a>
+ 
+Шаг 1. Отобразим конфигурацию коммутатора.
+
+a.	Отобразим текущую конфигурацию. 
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-46-07).png)
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-46-28).png)
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-46-57).png)
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-47-45).png)
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-48-12).png)
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-49-02).png)
+
+b. Проверим параметры VLAN 1.
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-58-31).png)
+
+*Вопросы:* 
+Какова полоса пропускания этого интерфейса? - *BW 100000 Kbit*   
+В каком состоянии находится VLAN 1? - *Vlan1 is administratively down*  
+В каком состоянии находится канальный протокол? - *Vlan1 is administratively down*  
+
+b-1. Факультативно. Проверим параметры VLAN 77.
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(12-58-31).png)
+
+*Вопросы:* 
+Какова полоса пропускания этого интерфейса? - *BW 100000 Kbit*   
+В каком состоянии находится VLAN 77? - *Vlan77 is up*  
+В каком состоянии находится канальный протокол? - *line protocol is up*  
+
+Шаг 2. Протестируем сквозное соединение, отправив эхо-запрос.
+
+a.	C:\> ping 192.168.1.10 
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(13-17-12).png)
+
+b.	C:\> ping 192.168.1.2 (эхо-запрос на административный адрес интерфейса SVI коммутатора S1).
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(13-17-12).png)
+
+Шаг 3. Проверим удаленное управление коммутатором S1.
+
+![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_07.09.2022(13-56-27).png)
+
+### 	Вопросы для повторения
+
+1.	Зачем необходимо настраивать пароль VTY для коммутатора? *Если не настроить пароль VTY, будет невозможно подключиться к коммутатору по протоколу Telnet (в нашем случае). VTY - виртуальный интерфейс, обеспечивающий удаленный доступ.*  
+2.	Что нужно сделать, чтобы пароли не отправлялись в незашифрованном виде? *Применить команду enable secret, которая обеспечивает бОльшую безопасность (по сравнению с enable password) - шифруя пароль.*
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  
  
 
