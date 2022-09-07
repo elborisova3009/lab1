@@ -1,7 +1,7 @@
 ## Лабораторная работа 1. Базовая настройка коммутатора
 ### Топология
 
-![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-17-22).png?raw=true)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(10-17-22).png)
 ### 	Таблица адресации
 ![alt text](https://github.com/elborisova3009/otus-network-engineer/blob/main/Screenshot_06.09.2022(10-38-32).png)
 ### 	Задачи 
