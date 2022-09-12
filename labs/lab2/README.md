@@ -10,17 +10,13 @@
 
 <a name="1"> Часть 1. Создание и настройка сети </a>
   
-Шаг 1. В Cisco PT создаем сеть согласно заданной топологии. 
+Шаг 1. В Cisco PT подключаем сеть в соответствии с топологией
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-20-58).png)
 
+Шаг 2. Настраиваем узлы PC-A и PC-B - присваиваем им ip адреса, согласно таблице адресации.
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-28).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-51).png)
 
-
-
-Проверяем конфигурацию коммутатора по умолчанию: текущие настройки коммутатора, данные IOS, свойства интерфейса, сведения о VLAN и флеш-память.
-
-b. Изучим текущий файл running configuration.  
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(12-28-57).png)
 
 *Вопросы:*  
 
