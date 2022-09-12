@@ -17,11 +17,34 @@
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-28).png)
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-51).png)
 
-Шаг 3. Cisco PT - выполнять инициализацию и перезагрузку коммутаторов не требуется.
+Шаг 3. Cisco PT - выполнять инициализацию и перезагрузку коммутаторов не требуется.  
+Алгоритм действий на живом железе:    
+Подключаемся к коммутатору с помощью консольного кабеля:  
+Switch> enable  
+Switch#  
+Switch# show flash (определяем, были ли созданы сети VLAN на коммутаторе)   
+Switch# delete vlan.dat (если во флеш-памяти обнаружен файл vlan.dat, удаляем его)  
+Delete filename [vlan.dat]? (запрос о проверке имени файла)  
+Delete flash:/vlan.dat? [confirm] (запрос о подтверждении удаления этого файла)  
+Switch#    
+Switch# erase startup-config  
+Erasing the nvram filesystem will remove all configuration files! Continue? [confirm] [OK]  
+Erase of nvram: complete  
+Switch#  
+Switch# reload  
+Proceed with reload? [confirm] (перезагрузка для удаления устаревшей информации о конфигурации из памяти, запрос о подтверждении перезагрузки коммутатора)..
+System configuration has been modified. Save? [yes/no]: no (возможен запрос о сохранении текущей конфигурации перед перезагрузкой коммутатора)    
+Would you like to enter the initial configuration dialog? [yes/no]: no (пперезагрузки коммутатора появится запрос о входе в диалоговое окно начальной конфигурации)  
+Switch>  
 
-Шаг 4. Настраиваем базовые параметры каждого коммутатора.
-S1:
+Шаг 4. Настраиваем базовые параметры каждого коммутатора.  
+S1:  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(13-35-44).png)
+
+S2:
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-10-52).png)
+
+
 
 
 
