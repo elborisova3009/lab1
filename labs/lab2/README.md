@@ -86,74 +86,19 @@ Switch>
   Шаг 3. Очистить таблицу МАС-адресов коммутатора S2 и снова отобразить таблицу МАС-адресов.
   
 a.	S2# clear mac address-table dynamic
+b.	Снова быстро введите команду show mac address-table.
 
- ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-42-30).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-42-30).png)
 
-b.	S2# show mac address-table
+Вопросы:  
+Указаны ли в таблице МАС-адресов адреса для VLAN 1? Указаны ли другие МАС-адреса? *Нет.*  
+Через 10 секунд вводим команду show mac address-table и нажимаем клавишу ввода. Появились ли в таблице МАС-адресов новые адреса?  
+*Да, который и был: 000c.cfa0.5401 Fa0/1 VLAN 1 коммутатора S1*   
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-44-17).png)
+
+с.	Факультативно. После эхо-запроса от коммутатора S2 к PC-A таблица МАС-адресов выглядит так:
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-44-37).png)
 
 
-
-Вопросы:
-Указаны ли в таблице МАС-адресов адреса для VLAN 1? Указаны ли другие МАС-адреса?
-Через 10 секунд введите команду show mac address-table и нажмите клавишу ввода. Появились ли в таблице МАС-адресов новые адреса?
-
-
-
-
-  
-  
-
-  
-- Настроить базовые параметры коммутатора
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(17-53-48).png)
-
-- Настроить IP-адрес для ПК  
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-13-15).png)
- 
- <a name="3"> Часть 3. Проверить сетевые подключения </a>
- 
-Шаг 1. Отобразим конфигурацию коммутатора.
-
-a.	Отобразим текущую конфигурацию. 
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-07).png)
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-28).png)
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-57).png)
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-47-45).png)
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-48-12).png)
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-49-02).png)
-
-b. Проверим параметры VLAN 1 (77) (в моем случае).
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-57-08).png)
-
-*Вопросы:* 
-Какова полоса пропускания этого интерфейса? - *BW 100000 Kbit*   
-В каком состоянии находится VLAN 1 (77)? - *Vlan77 is up*  
-В каком состоянии находится канальный протокол? - *line protocol is up*  
-
-Шаг 2. Протестируем сквозное соединение, отправив эхо-запрос.
-
-a.	C:\> ping 192.168.1.10 
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-17-12).png)
-
-b.	C:\> ping 192.168.1.2 (эхо-запрос на административный адрес интерфейса SVI коммутатора S1).
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-16-33).png)
-
-Шаг 3. Проверим удаленное управление коммутатором S1.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-56-27).png)
-
-### 	Вопросы для повторения
-
-1.	Зачем необходимо настраивать пароль VTY для коммутатора? *Если не настроить пароль VTY, будет невозможно подключиться к коммутатору по протоколу Telnet (в нашем случае). VTY - виртуальный интерфейс, обеспечивающий удаленный доступ.*  
-2.	Что нужно сделать, чтобы пароли не отправлялись в незашифрованном виде? *Применить команду enable secret, которая обеспечивает бОльшую безопасность (по сравнению с enable password) - шифруя пароль.*
