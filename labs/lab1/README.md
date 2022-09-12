@@ -1,9 +1,9 @@
 ## Лабораторная работа 1. Базовая настройка коммутатора
 ### Топология
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(10-17-22).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(10-17-22).png)
 ### 	Таблица адресации
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(16-23-18).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(16-23-18).png)
 ### 	Задачи 
 
 <a href="#1"> Часть 1. Создать сеть согласно топологии и проверить конфигурацию коммутатора по умолчанию </a>  
@@ -22,13 +22,13 @@
 <a name="1"> Часть 1. Создать сеть согласно топологии и проверить конфигурацию коммутатора по умолчанию </a>
   
 a. Создаем сеть согласно заданной топологии (Cisco PT, в доступе есть реальное оборудование). Устанавливаем консольное подключение между коммутатором S1 и компьютером PC-A. На данном этапе не подключаем кабель Ethernet. При первоначальной настройке коммутатора невозможно подключиться через Telnet или SSH - они используются, когда настраиваемое оборудование уже доступно по сети (как минимум у коммутатора на int vlan задан ip адрес, на vty линии активирован прикладной протокол удаленного доступа и тип аутентификации).   
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(11-38-01).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(11-38-01).png)
 
 Проверяем конфигурацию коммутатора по умолчанию: текущие настройки коммутатора, данные IOS, свойства интерфейса, сведения о VLAN и флеш-память.
 
 b. Изучим текущий файл running configuration.  
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(12-28-57).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(12-28-57).png)
 
 *Вопросы:*  
 
@@ -38,7 +38,7 @@ b. Изучим текущий файл running configuration.
 
 c. Изучим файл загрузочной конфигурации (startup configuration), который содержится в энергонезависимом ОЗУ (NVRAM). 
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-32-42).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(14-32-42).png)
 
 *Вопрос:* 
 
@@ -47,7 +47,7 @@ c. Изучим файл загрузочной конфигурации (startu
 
 d. Изучим характеристики SVI для VLAN 1.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-29-02).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(14-29-02).png)
 
 *Вопросы:* 
 
@@ -58,7 +58,7 @@ d. Изучим характеристики SVI для VLAN 1.
 
 e. Изучим IP-свойства интерфейса SVI сети VLAN 1. 
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-38-46).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(14-38-46).png)
 
 *Вопрос:* 
 Какие выходные данные вы видите?  
@@ -67,12 +67,12 @@ e. Изучим IP-свойства интерфейса SVI сети VLAN 1.
 f. Подсоединим кабель Ethernet компьютера PC-A к порту 6 на коммутаторе и изучим IP-свойства интерфейса SVI сети VLAN 1.   
 Дождемся согласования параметров скорости и дуплекса между коммутатором и ПК.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-41-21).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(15-41-21).png)
 
 g.	Изучим сведения о версии ОС Cisco IOS на коммутаторе.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-50-24).png)
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-50-44).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(15-50-24).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(15-50-44).png)
 
 *Вопросы:* 
 Под управлением какой версии ОС Cisco IOS работает коммутатор? *Version 15.0(2)SE4*  
@@ -81,7 +81,7 @@ g.	Изучим сведения о версии ОС Cisco IOS на комму�
 
 h.	Изучим свойства по умолчанию интерфейса FastEthernet, который используется компьютером PC-A.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-57-38).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(15-57-38).png)
 
 *Вопросы:* 
 Интерфейс включен или выключен? *Включен.*  
@@ -92,7 +92,7 @@ h.	Изучим свойства по умолчанию интерфейса Fa
 
 i.	Изучим параметры сети VLAN по умолчанию на коммутаторе.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(16-31-43).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(16-31-43).png)
 
 *Вопросы:* 
 Какое имя присвоено сети VLAN 1 по умолчанию? *default*  
@@ -102,7 +102,7 @@ i.	Изучим параметры сети VLAN по умолчанию на к
 
 j.	Изучим флеш-память.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(16-37-47).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(16-37-47).png)
 
 *Вопрос:*
 Какое имя присвоено образу Cisco IOS? *2960-lanbasek9-mz.150-2.SE4.bin*
@@ -112,11 +112,11 @@ j.	Изучим флеш-память.
  
 - Настроить базовые параметры коммутатора
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(17-53-48).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_06.09.2022(17-53-48).png)
 
 - Настроить IP-адрес для ПК  
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-13-15).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(13-13-15).png)
  
  <a name="3"> Часть 3. Проверить сетевые подключения </a>
  
@@ -124,21 +124,21 @@ j.	Изучим флеш-память.
 
 a.	Отобразим текущую конфигурацию. 
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-07).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-46-07).png)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-28).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-46-28).png)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-46-57).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-46-57).png)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-47-45).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-47-45).png)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-48-12).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-48-12).png)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-49-02).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-49-02).png)
 
 b. Проверим параметры VLAN 1 (77) (в моем случае).
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(12-57-08).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(12-57-08).png)
 
 *Вопросы:* 
 Какова полоса пропускания этого интерфейса? - *BW 100000 Kbit*   
@@ -149,35 +149,17 @@ b. Проверим параметры VLAN 1 (77) (в моем случае).
 
 a.	C:\> ping 192.168.1.10 
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-17-12).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(13-17-12).png)
 
 b.	C:\> ping 192.168.1.2 (эхо-запрос на административный адрес интерфейса SVI коммутатора S1).
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-16-33).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(13-16-33).png)
 
 Шаг 3. Проверим удаленное управление коммутатором S1.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_07.09.2022(13-56-27).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab1/Screenshot_07.09.2022(13-56-27).png)
 
 ### 	Вопросы для повторения
 
 1.	Зачем необходимо настраивать пароль VTY для коммутатора? *Если не настроить пароль VTY, будет невозможно подключиться к коммутатору по протоколу Telnet (в нашем случае). VTY - виртуальный интерфейс, обеспечивающий удаленный доступ.*  
 2.	Что нужно сделать, чтобы пароли не отправлялись в незашифрованном виде? *Применить команду enable secret, которая обеспечивает бОльшую безопасность (по сравнению с enable password) - шифруя пароль.*
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
