@@ -46,7 +46,9 @@ Switch>
 
  <a name="2"> Часть 2. Изучение таблицы МАС-адресов коммутатора </a>
  
- a.	Открыть командную строку на PC-A и PC-B и ввести команду ipconfig /all  
+ Шаг 1. Запишем МАС-адреса сетевых устройств.
+ 
+ a.	Откроем командную строку на PC-A и PC-B и введем команду ipconfig /all  
  
  ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-32-27).png)
  ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-33-22).png)
@@ -58,7 +60,7 @@ Switch>
   MAC-адрес компьютера PC-A: 0030.F2E3.DD44  
   MAC-адрес компьютера PC-B: 000B.BEE9.18AC  
   
-  b.	Подключиться к коммутаторам S1 и S2 и ввести команду show interface F0/1 на каждом коммутаторе
+  b.	Подключимся к коммутаторам S1 и S2 и введем команду show interface F0/1 на каждом коммутаторе
   
   ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-58-41).png)
   ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-58-04).png)
@@ -69,24 +71,39 @@ Switch>
   МАС-адрес коммутатора S2 Fast Ethernet 0/1: address is 0000.0cc8.7001 (bia 0000.0cc8.7001)
   
   
+  Шаг 2. Просмотрим таблицу МАС-адресов коммутатора.
+  S2# show mac address-table
   
+  ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-27-11).png)
+  
+*Вопросы:*
+1. Записаны ли в таблице МАС-адресов какие-либо МАС-адреса? *Да.*    
+2. Какие МАС-адреса записаны в таблице? С какими портами коммутатора они сопоставлены и каким устройствам принадлежат? Игнорируйте МАС-адреса, сопоставленные с центральным процессором.   
+*000c.cfa0.5401 Fa0/1 VLAN 1 коммутатора S1*  
+3. Если вы не записали МАС-адреса сетевых устройств в шаге 1, как можно определить, каким устройствам принадлежат МАС-адреса, используя только выходные данные команды show mac address-table? Работает ли это решение в любой ситуации?   
+*Столбец Ports показывает интерфейс с данным адресом. Да (???)*
+
+  Шаг 3. Очистить таблицу МАС-адресов коммутатора S2 и снова отобразить таблицу МАС-адресов.
+  
+a.	S2# clear mac address-table dynamic
+
+ ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(17-42-30).png)
+
+b.	S2# show mac address-table
+
+
+
+Вопросы:
+Указаны ли в таблице МАС-адресов адреса для VLAN 1? Указаны ли другие МАС-адреса?
+Через 10 секунд введите команду show mac address-table и нажмите клавишу ввода. Появились ли в таблице МАС-адресов новые адреса?
+
+
+
 
   
   
+
   
-  
-  
-  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 - Настроить базовые параметры коммутатора
 
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(17-53-48).png)
