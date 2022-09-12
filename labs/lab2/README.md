@@ -17,18 +17,17 @@
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-28).png)
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-51).png)
 
+Шаг 3. Cisco PT - выполнять инициализацию и перезагрузку коммутаторов не требуется.
 
-*Вопросы:*  
+Шаг 4. Настраиваем базовые параметры каждого коммутатора.
+S1:
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(13-35-44).png)
 
-Сколько интерфейсов FastEthernet имеется на коммутаторе 2960? *24*     
-Сколько интерфейсов Gigabit Ethernet имеется на коммутаторе 2960? *2*    
-Каков диапазон значений, отображаемых в vty-линиях? *0-15*
 
-c. Изучим файл загрузочной конфигурации (startup configuration), который содержится в энергонезависимом ОЗУ (NVRAM). 
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-32-42).png)
 
-*Вопрос:* 
+
+
 
 Почему появляется сообщение: startup-config is not present?  
 *Типичное сообщение, когда коммутатор конфигурируется впервые (конфиг еще не записан) или сброшен к заводским настройкам. Никто еще не делал запись конфига.*
