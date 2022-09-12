@@ -10,115 +10,82 @@
 
 <a name="1"> Часть 1. Создание и настройка сети </a>
   
-Шаг 1. В Cisco PT подключаем сеть в соответствии с топологией
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-20-58).png)
+Шаг 1. В Cisco PT подключаем сеть в соответствии с топологией  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-20-58-).png)  
 
 Шаг 2. Настраиваем узлы PC-A и PC-B - присваиваем им ip адреса, согласно таблице адресации.
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-28).png)
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(12-38-51).png)
 
-Шаг 3. Cisco PT - выполнять инициализацию и перезагрузку коммутаторов не требуется.  
-Алгоритм действий на живом железе:    
+Шаг 3. В Cisco PT выполнять инициализацию и перезагрузку коммутаторов не требуется. 
+
+Алгоритм действий на живом железе следующий.      
 Подключаемся к коммутатору с помощью консольного кабеля:  
-Switch> enable  
+Switch> enable    
 Switch#  
-Switch# show flash (определяем, были ли созданы сети VLAN на коммутаторе)   
-Switch# delete vlan.dat (если во флеш-памяти обнаружен файл vlan.dat, удаляем его)  
-Delete filename [vlan.dat]? (запрос о проверке имени файла)  
-Delete flash:/vlan.dat? [confirm] (запрос о подтверждении удаления этого файла)  
+Switch# show flash *(определяем, были ли созданы сети VLAN на коммутаторе)*   
+Switch# delete vlan.dat *(если во флеш-памяти обнаружен файл vlan.dat, удаляем его)*    
+Delete filename [vlan.dat]? *(запрос о проверке имени файла)*  
+Delete flash:/vlan.dat? [confirm] *(запрос о подтверждении удаления этого файла)*  
 Switch#    
 Switch# erase startup-config  
-Erasing the nvram filesystem will remove all configuration files! Continue? [confirm] [OK]  
+Erasing the nvram filesystem will remove all configuration files! Continue? [confirm] [OK]    
 Erase of nvram: complete  
 Switch#  
 Switch# reload  
-Proceed with reload? [confirm] (перезагрузка для удаления устаревшей информации о конфигурации из памяти, запрос о подтверждении перезагрузки коммутатора)..
-System configuration has been modified. Save? [yes/no]: no (возможен запрос о сохранении текущей конфигурации перед перезагрузкой коммутатора)    
-Would you like to enter the initial configuration dialog? [yes/no]: no (пперезагрузки коммутатора появится запрос о входе в диалоговое окно начальной конфигурации)  
+Proceed with reload? [confirm] *(перезагрузка для удаления устаревшей информации о конфигурации из памяти, запрос о подтверждении перезагрузки коммутатора)*  
+System configuration has been modified. Save? [yes/no]: no *(возможен запрос о сохранении текущей конфигурации перед перезагрузкой коммутатора)*     
+Would you like to enter the initial configuration dialog? [yes/no]: no *(после перезагрузки коммутатора появится запрос о входе в диалоговое окно начальной конфигурации)*    
 Switch>  
 
-Шаг 4. Настраиваем базовые параметры каждого коммутатора.  
-S1:  
+Шаг 4. Настраиваем базовые параметры каждого коммутатора.
+  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(13-35-44).png)
-
-S2:
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-10-52).png)
 
 
-
-
-
-
-
-
-
-Почему появляется сообщение: startup-config is not present?  
-*Типичное сообщение, когда коммутатор конфигурируется впервые (конфиг еще не записан) или сброшен к заводским настройкам. Никто еще не делал запись конфига.*
-
-d. Изучим характеристики SVI для VLAN 1.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-29-02).png)
-
-*Вопросы:* 
-
-Назначен ли IP-адрес сети VLAN 1? *Нет.*    
-Какой MAC-адрес имеет SVI? Возможны различные варианты ответов.  
-*SVI не имеет MAC-адрес, MAC-адрес аппаратного интерфейса 00d0.d301.63bd*   
-Данный интерфейс включен? *Выключен.*  
-
-e. Изучим IP-свойства интерфейса SVI сети VLAN 1. 
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(14-38-46).png)
-
-*Вопрос:* 
-Какие выходные данные вы видите?  
-*Интерфейс VLAN 1 выключен, IP-адрес для него не назначен, ни один из портов сети VLAN 1 не назначен.*
-
-f. Подсоединим кабель Ethernet компьютера PC-A к порту 6 на коммутаторе и изучим IP-свойства интерфейса SVI сети VLAN 1.   
-Дождемся согласования параметров скорости и дуплекса между коммутатором и ПК.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-41-21).png)
-
-g.	Изучим сведения о версии ОС Cisco IOS на коммутаторе.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-50-24).png)
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-50-44).png)
-
-*Вопросы:* 
-Под управлением какой версии ОС Cisco IOS работает коммутатор? *Version 15.0(2)SE4*  
-Как называется файл образа системы? *c2960-lanbasek9-mz.150-2.SE4.bin*   
-Какой базовый MAC-адрес назначен коммутатору? *Base ethernet MAC Address: 00:D0:D3:01:63:BD*  
-
-h.	Изучим свойства по умолчанию интерфейса FastEthernet, который используется компьютером PC-A.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(15-57-38).png)
-
-*Вопросы:* 
-Интерфейс включен или выключен? *Включен.*  
-Что нужно сделать, чтобы включить интерфейс? *На коммутаторах порты по умолчанию включены.*   
-Какой MAC-адрес у интерфейса? *0001.42de.3d06 (bia 0001.42de.3d06)* 
-Какие настройки скорости и дуплекса заданы в интерфейсе?  
-*Full-duplex, 100Mb/s.*  
-
-i.	Изучим параметры сети VLAN по умолчанию на коммутаторе.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(16-31-43).png)
-
-*Вопросы:* 
-Какое имя присвоено сети VLAN 1 по умолчанию? *default*  
-Какие порты расположены в сети VLAN 1? *Все.*  
-Активна ли сеть VLAN 1? *Да.*  
-К какому типу сетей VLAN принадлежит VLAN по умолчанию? *enet*
-
-j.	Изучим флеш-память.
-
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/Screenshot_06.09.2022(16-37-47).png)
-
-*Вопрос:*
-Какое имя присвоено образу Cisco IOS? *2960-lanbasek9-mz.150-2.SE4.bin*
-
-
  <a name="2"> Часть 2. Изучение таблицы МАС-адресов коммутатора </a>
+ 
+ a.	Открыть командную строку на PC-A и PC-B и ввести команду ipconfig /all  
+ 
+ ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-32-27).png)
+ ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-33-22).png)
+ 
+  Физические адреса адаптера Ethernet:  
+  PC-A: Physical Address................: 0030.F2E3.DD44  
+  PC-B: Physical Address................: 000B.BEE9.18AC
+  
+  MAC-адрес компьютера PC-A: 0030.F2E3.DD44  
+  MAC-адрес компьютера PC-B: 000B.BEE9.18AC  
+  
+  b.	Подключиться к коммутаторам S1 и S2 и ввести команду show interface F0/1 на каждом коммутаторе
+  
+  ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-58-41).png)
+  ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(15-58-04).png)
+  
+  Адреса оборудования во второй строке выходных данных команды (или зашитый адрес — bia):
+  
+  МАС-адрес коммутатора S1 Fast Ethernet 0/1: address is 000c.cfa0.5401 (bia 000c.cfa0.5401)  
+  МАС-адрес коммутатора S2 Fast Ethernet 0/1: address is 0000.0cc8.7001 (bia 0000.0cc8.7001)
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 - Настроить базовые параметры коммутатора
 
