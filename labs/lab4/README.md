@@ -1,9 +1,11 @@
 ## Лабораторная работа. Настройка IPv6-адресов на сетевых устройствах 
 ### Топология
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(11-07-50).png)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20180809.jpg)
 ### 	Таблица адресации
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab2/Screenshot_12.09.2022(11-44-37).png)
-### 	Цели 
-<a href="#1"> Часть 1. Создание и настройка сети </a>  
-<a href="#2"> Часть 2. Изучение таблицы МАС-адресов коммутатора </a>  
-### 	Ход выполнения 
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20181153.jpg)
+### 	Задачи
+Часть 1. Настройка топологии и конфигурация основных параметров маршрутизатора и коммутатора  
+Часть 2. Ручная настройка IPv6-адресов  
+Часть 3. Проверка сквозного соединения  
+
+
