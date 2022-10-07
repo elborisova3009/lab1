@@ -2,7 +2,7 @@
 ### Топология
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20180809.jpg)
 ### 	Таблица адресации
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20181153.jpg)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20181153.jpg)  
 ### 	Задачи
 Часть 1. Настройка топологии и конфигурация основных параметров маршрутизатора и коммутатора  
 Часть 2. Ручная настройка IPv6-адресов  
