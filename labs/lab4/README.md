@@ -26,7 +26,7 @@
 
 Шаг 1. Назначаю IPv6-адреса интерфейсам Ethernet на R1.    
 a.	Назначаю глобальные IPv6-адреса одноадресной передачи из таблицы маршрутизации каждому из двух Ethernet-интерфейсов маршрутизатора R1.  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20193610.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20190610.jpg)  
 b.	Ввожу команду show ipv6 interface brief, чтобы проверить, назначен ли каждому интерфейсу действительный IPv6-адрес одноадресной передачи.  
 (Отображаемый локальный адрес канала основан на адресации EUI-64, которая автоматически использует MAC-адрес интерфейса для создания 128-битного локального IPv6-адреса канала.)   
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20190947.jpg)  
@@ -39,9 +39,13 @@ c.	Ввожу команду show ipv6 interface g0/0. Учитываю, что 
 Обращаю внимание:    
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20193610.jpg)   
 d.	Чтобы локальный адрес канала соответствовал адресу одноадресной передачи в интерфейсе, вручную ввожу локальные адреса каналов для каждого из двух Ethernet-интерфейсов маршрутизатора R1. (Каждый интерфейс маршрутизатора относится к отдельной сети. Пакеты с локальным адресом канала никогда не выходят за пределы локальной сети, а значит, для обоих интерфейсов можно указывать один и тот же локальный адрес канала.)  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20194333.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20194333.jpg)
 e. Еще раз ввожу команду show ipv6interface g0/0. Учитываю, что локальный адрес канала изменился на FE80::1 и осталась только одна многоадресная группа запрошенных узлов.  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20234638.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20234638.jpg)
+
+
+
+Почему PC-B получил глобальный префикс маршрутизации и идентификатор подсети, которые вы настроили на R1?Потому что ПК получает свой IPv6-адреса и шлюз по умолчанию через. SLAAC. 
 
 
 
