@@ -1,6 +1,7 @@
 ## Лабораторная работа. Настройка IPv6-адресов на сетевых устройствах 
 ### Топология
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20180809.jpg)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20180809.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20014751.jpg)  
 ### 	Таблица адресации
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2007-10-2022%20181153.jpg)  
 ### 	Задачи
@@ -63,15 +64,19 @@ c.	Теперь, когда R1 входит в группу многоадрес
 Потому, что PC-B получает свой IPv6-адреса и шлюз по умолчанию через SLAAC.  
 
 Шаг 3. Назначаю IPv6-адреса интерфейсу управления (SVI) на S1.
-a.	Назначаю полученный IPv6-адрес интерфейсу управления (в данной работе я вынесла SVI в отдельный vlan - VLAN 2, но в задании в таблице маршрутизации остался VLAN 1) на коммутаторе S1. Также назначу этому интерфейсу локальный адрес канала. Аналогично, как и на маршрутизаторе.
+a.	Назначаю полученный IPv6-адрес интерфейсу управления (в данной работе я вынесла SVI во VLAN 2, вопреки заданному VLAN 1 - меня ругают, когда я вешаю управление на VLAN 1) на коммутаторе S1. Также назначу этому интерфейсу локальный адрес канала. Аналогично, как и на маршрутизаторе.
 Для этого. Для начала, чтобы установить шаблон dual-ipv4-and-ipv6 в качестве шаблона SDM по умолчанию, выполню следующие действия:  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20012114.jpg)  
 Затем определю порты fa 0/5 и fa 0/6 во VLAN 2.    
 После чего перейду к назначению IPv6 адресов согласно заданию.   
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20012955.jpg)    
-
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20012955.jpg)      
 b.	Проверю правильность назначения IPv6-адресов интерфейсу управления с помощью команды show ipv6 interface vlan1.  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013251.jpg)  
+
+Шаг 4. Назначу компьютерам статические IPv6-адреса.
+
+
+
 
 
 
