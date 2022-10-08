@@ -67,13 +67,37 @@ c.	Теперь, когда R1 входит в группу многоадрес
 a.	Назначаю полученный IPv6-адрес интерфейсу управления (в данной работе я вынесла SVI во VLAN 2, вопреки заданному VLAN 1 - меня ругают, когда я вешаю управление на VLAN 1) на коммутаторе S1. Также назначу этому интерфейсу локальный адрес канала. Аналогично, как и на маршрутизаторе.
 Для этого. Для начала, чтобы установить шаблон dual-ipv4-and-ipv6 в качестве шаблона SDM по умолчанию, выполню следующие действия:  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20012114.jpg)  
-Затем определю порты fa 0/5 и fa 0/6 во VLAN 2.    
+Затем определю порты fa 0/5 и fa 0/6 во VLAN 2, переведу соотвутствующие порты в режимы acess и trunk.    
 После чего перейду к назначению IPv6 адресов согласно заданию.   
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20012955.jpg)      
 b.	Проверю правильность назначения IPv6-адресов интерфейсу управления с помощью команды show ipv6 interface vlan1.  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013251.jpg)  
 
-Шаг 4. Назначу компьютерам статические IPv6-адреса.
+Шаг 4. Назначу компьютерам статические IPv6-адреса.  
+На реальном железе: 
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013857.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013908.jpg)  
+В CPT:  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20015134.jpg)    
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20015114.jpg)   
+Оба компьютера имеют правильную информацию адреса IPv6 - по два глобальных адреса IPv6: один статический и один SLACC. 
+
+
+### Часть 3. Проверка сквозного подключения
+
+С PC-A отправлю эхо-запрос на FE80::1 (локальный адрес канала, назначенный G0/1 на R1):  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20035721.jpg)  
+С PC-A отправлю эхо-запрос на интерфейс управления S1:  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20035346.jpg)  
+Введу команду tracert на PC-A, чтобы проверить наличие сквозного подключения к PC-B:  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20040106.jpg)  
+С PC-B отправлю эхо-запрос на PC-A:  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20040246.jpg)  
+С PC-B отправлю эхо-запрос на FE80::1 (локальный адрес канала, назначенный G0/0 на R1):  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20040437.jpg)
+
+
+
 
 
 
