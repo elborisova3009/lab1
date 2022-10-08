@@ -73,8 +73,8 @@ a.	Назначаю полученный IPv6-адрес интерфейсу у
 b.	Проверю правильность назначения IPv6-адресов интерфейсу управления с помощью команды show ipv6 interface vlan1.  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013251.jpg)  
 
-Шаг 4. Назначу компьютерам статические IPv6-адреса.  
-На реальном железе: 
+Шаг 4. Назначу компьютерам статические IPv6-адреса.    
+На реальном железе:   
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013857.jpg)  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab4/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2008-10-2022%20013908.jpg)  
 В CPT:  
