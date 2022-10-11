@@ -3,8 +3,6 @@
 ### Топология
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20121306.jpg)
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20130805-1.jpg)  
-
 ### 	Таблица адресации
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20120646-1.jpg)
 
@@ -15,6 +13,30 @@
 Часть 4. SSH через интерфейс командной строки (CLI) коммутатора
 
 ### 	Часть 1. Настройка основных параметров устройств
+
+Шаг 1. Создаю в CPR сеть согласно топологии.
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20130805-1.jpg) 
+
+Шаг 2. Выполнение инициализации и перезагрузка устройств в CPT не предполагается.
+
+Шаг 3. Настрою маршрутизатор R1 согласно заданному алгоритму.  
+Конфиг:
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%2016282-1.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
