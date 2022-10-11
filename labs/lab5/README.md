@@ -49,17 +49,50 @@
 ### Часть 3. Настройка коммутатора для доступа по протоколу SSH
 
 Шаги 1-2 аналогичны настройке маршрутизатора (логин и пароль использовала те же).  
-Когфиг:  
+Конфиг:  
 
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20172338.jpg)  
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20172411.jpg)
-
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20172710.jpg)  
+
+Show Run:
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20175837.jpg)
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20175848.jpg)
+
 
 Шаг 3. Установлю соединение с коммутатором S1 по протоколу SSH, используя логин ssh_admin и пароль enAdm1nP@55.  
 
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20172910.jpg)
+
+
+### Часть 4. Настройка протокола SSH с использованием интерфейса командной строки (CLI) коммутатора
+
+Шаг 1. Посмотрю доступные параметры для клиента SSH в Cisco IOS.
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20173913.jpg)  
+
+
+Шаг 2. Установлю с коммутатора S1 соединение с маршрутизатором R1 по протоколу SSH.
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab5/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-10-2022%20175734.jpg)
+
+Вопрос.  
+Какие версии протокола SSH поддерживаются при использовании интерфейса командной строки?  *SSH1 ,SSH2*  
+
+### Вопрос для повторения
+
+Как предоставить доступ к сетевому устройству нескольким пользователям, у каждого из которых есть собственное имя пользователя?  
+*Настроить доступ по SSH, создать уникальных пользователей (команда username).*
+
+
+
+
+
+
+
+
 
 
 
