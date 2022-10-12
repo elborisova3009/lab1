@@ -98,15 +98,23 @@ S2:
 a.	Настрою статический транкинг на интерфейсе F0/1 для обоих коммутаторов.  
 b.	Установлю native VLAN 1000 на обоих коммутаторах.  
 c.	Укажу, что VLAN 10, 20, 30 и 1000 могут проходить по транку.  
-d.	Проверю транки, native VLAN и разрешенные VLAN через транк.  
+d.	Проверю транки, native VLAN и разрешенные VLAN через транк.
 
 Синтаксис следующий.  
 S1:  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20171533.jpg)
-
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20171533.jpg)  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20171202.jpg)
 
-S2:  
+S2:   
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20175352.jpg) 
+
+Шаг 2. Вручную настрою магистральный интерфейс F0/5 на коммутаторе S1.
+
+a.	Настройте интерфейс S1 F0/5 с теми же параметрами транка, что и F0/1. Это транк до маршрутизатора.
+b.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.
+c.	Проверка транкинга.
+Вопрос:
+Что произойдет, если G0/0/1 на R1 будет отключен?
 
 
 
