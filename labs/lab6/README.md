@@ -76,7 +76,8 @@ S2:
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20155036.jpg)  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20155048.jpg)
 
-c.	Все неиспользуемые порты коммутаторов назначены во VLAN Parking_Lot, они уже настроены для статического режима доступа. Теперь административно деактивирую их.
+c.	Все неиспользуемые порты коммутаторов уже назначены во VLAN Parking_Lot, также они уже настроены для статического режима доступа.  
+Теперь административно деактивирую их.
 
 S1:
 
@@ -85,14 +86,10 @@ S1:
 
 S2:
 
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20160529.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20160644.jpg)
 
 
-
-
-
-Шаг 2. Назначьте сети VLAN соответствующим интерфейсам коммутатора.
-a.	Назначьте используемые порты соответствующей VLAN (указанной в таблице VLAN выше) и настройте их для режима статического доступа.
-b.	Убедитесь, что VLAN назначены на правильные интерфейсы.
 
 
 
