@@ -76,15 +76,20 @@ S2:
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20155036.jpg)  
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20155048.jpg)
 
+c.	Все неиспользуемые порты коммутаторов назначены во VLAN Parking_Lot, они уже настроены для статического режима доступа. Теперь административно деактивирую их.
+
+S1:
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20160116.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20160153.jpg)
+
+S2:
 
 
 
 
 
 
-
-c.	Назначьте все неиспользуемые порты коммутатора VLAN Parking_Lot, настройте их для статического режима доступа и административно деактивируйте их.
-Примечание. Команда interface range полезна для выполнения этой задачи с минимальным количеством команд.
 Шаг 2. Назначьте сети VLAN соответствующим интерфейсам коммутатора.
 a.	Назначьте используемые порты соответствующей VLAN (указанной в таблице VLAN выше) и настройте их для режима статического доступа.
 b.	Убедитесь, что VLAN назначены на правильные интерфейсы.
