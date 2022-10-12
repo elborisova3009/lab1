@@ -49,8 +49,13 @@ Show Run:
 a.	Создам и назову необходимые VLAN на каждом коммутаторе из таблицы выше. 
 
 Vlan 10 для S1: 
+
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20125154.jpg)
 
+Vlan 20 для S1: 
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20130607.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2012-10-2022%20130622.jpg)
 
 
 .
