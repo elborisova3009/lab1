@@ -145,15 +145,27 @@ Show ip interface brief:
 ### Часть 5. Проверка маршрутизация между VLAN
 
 Шаг 1. Выполню следующие тесты с PC-A. 
-a.	Эхо-запрос с PC-A на шлюз по умолчанию.
-
+a.	Эхо-запрос с PC-A на шлюз по умолчанию.  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2013-10-2022%20125406.jpg)  
 
 b.	Отправьте эхо-запрос с PC-A на PC-B.
+### Пинг не проходит. 
+
 c.	Отправьте команду ping с компьютера PC-A на коммутатор S2.
-Шаг 2. Пройдите следующий тест с PC-B
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2013-10-2022%20150124.jpg)
+
+
+Шаг 2. Пройду следующий тест с PC-B.
 В окне командной строки на PC-B выполните команду tracert на адрес PC-A.
+### Не проходит. 
+
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2013-10-2022%20150527.jpg)
+
 Вопрос:
 Какие промежуточные IP-адреса отображаются в результатах?
+
+
 
 
 
