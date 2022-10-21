@@ -39,15 +39,11 @@ S2 show run:
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20131639.jpg) 
 
 S3 show run:    
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20132028.jpg)   
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20132037.jpg)  
-
-
-
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20141520.jpg)   
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20141532.jpg)
 
 Шаг 4:	Проверю связь.  
 
-Проверьте способность компьютеров обмениваться эхо-запросами.
 Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S2?	______________
 Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S3?	______________
 Успешно ли выполняется эхо-запрос от коммутатора S2 на коммутатор S3?	______________
