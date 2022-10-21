@@ -36,18 +36,28 @@ S1 show run:
 Аналогично для S2 и S.  
 S2 show run:   
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20131627.jpg)  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20131639.jpg) 
-
-S3 show run:    
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20131639.jpg)  
+S3 show run:      
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20141520.jpg)   
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20141532.jpg)
 
 Шаг 4:	Проверю связь.  
+Нет пингов.
 
-Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S2?	______________
-Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S3?	______________
-Успешно ли выполняется эхо-запрос от коммутатора S2 на коммутатор S3?	______________
-Выполняйте отладку до тех пор, пока ответы на все вопросы не будут положительными.
+Дополню конфиги настройкой магистральных портов, задам VLAN 88 - native.  
+
+Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S2? *Да.*  
+
+Успешно ли выполняется эхо-запрос от коммутатора S1 на коммутатор S3? *Да.*  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20144526.jpg)  
+
+
+Успешно ли выполняется эхо-запрос от коммутатора S2 на коммутатор S3?	*Да.*    
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20145150.jpg) 
+
+
+
+
 
 
 
