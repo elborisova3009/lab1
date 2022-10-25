@@ -63,31 +63,29 @@ S3 show run:
 
 Шаг 2:	Настройте подключенные порты в качестве транковых.  
 
-
-
 Шаг 3:	Включите порты F0/2 и F0/4 на всех коммутаторах.
 
-![alt text](
-
-Аналогично для S1 и S2. 
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130109.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130134.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130239.jpg)  
 
 Шаг 4:	Отобразите данные протокола spanning-tree.
 
 S1:  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20160134.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130647.jpg)  
 S2:  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20160145.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130717.jpg)  
 S3:  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20160159.jpg)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20130736.jpg)
 
 Приоритет идентификатора моста рассчитывается путем сложения значений приоритета и расширенного идентификатора системы.  
 Расширенным идентификатором системы всегда является номер сети VLAN. В примере ниже все три коммутатора имеют равные значения приоритета идентификатора моста (32856 = 32768 + 88, где приоритет по умолчанию = 32768, номер сети VLAN = 88).  
 Следовательно, коммутатор с самым низким значением MAC-адреса становится корневым мостом.  
 В данной работе — это S2:  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20161846.jpg)  
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20131150.jpg)
 
 Заполню схему, запишу роли (Role) и состояния (Sts) портов на каждом коммутаторе в топологии.  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-10-2022%20163928-1.jpg)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-10-2022%20163928-2.jpg)
 
 С учетом выходных данных, поступающих с коммутаторов, ответьте на следующие вопросы.
 Какой коммутатор является корневым мостом? *S2*   
@@ -116,7 +114,7 @@ S3:
 При текущей конфигурации только один коммутатор содерджит заблокированный протоколом STP порт.  
 Выполню команду show spanning-tree на обоих коммутаторах некорневого моста.  
 SPT блокирует порт F0/4 на коммутаторе S1, у которого самый высокий идентификатор BID.  
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-10-2022%20174533.jpg)
+![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-10-2022%20131913.jpg)  
 
 Шаг 2:	Изменю стоимость порта.
 Помимо заблокированного порта, единственным активным портом на этом коммутаторе является порт, выделенный в качестве порта корневого моста. 
@@ -124,11 +122,6 @@ SPT блокирует порт F0/4 на коммутаторе S1, у кото
 
 S1(config)# interface f0/2
 S1(config-if)# spanning-tree cost 18
-
-
-
-
-
 
 
 
