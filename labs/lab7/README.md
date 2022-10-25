@@ -61,10 +61,13 @@ S3 show run:
 
 ![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20150348.jpg)
 
-Шаг 2:	Настройте подключенные порты в качестве транковых.
+Шаг 2:	Настройте подключенные порты в качестве транковых.  
+
+
+
 Шаг 3:	Включите порты F0/2 и F0/4 на всех коммутаторах.
 
-![alt text](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab7/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2021-10-2022%20154046.jpg)  
+![alt text](
 
 Аналогично для S1 и S2. 
 
