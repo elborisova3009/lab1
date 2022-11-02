@@ -160,9 +160,7 @@ exit
 vlan 1000
 name Native
 end
-show vlan
 ```  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20145330-1.jpg)  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20145543.jpg)   
 S2:  
 _Столкнулась со сложностью при выполнении раздела c. Шага 7.  
@@ -187,6 +185,16 @@ shutdown
 end  
 ```  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20155802.jpg)  
+  
+Шаг 8. (был выполнен на предыдущем шаге)    
+Сети VLAN были назначены соответствующим интерфейсам коммутаторов.
+a.	Назначены используемые порты соответствующим VLAN (указанным в таблице VLAN выше) и настроены для режима статического доступа.  
+b.	VLAN назначены на правильные интерфейсы:   
+S1:  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20145330-1.jpg)   
+Вопрос:  
+Почему интерфейс F0/5 указан в VLAN 1? _Эти интерфейсы на S1 и S2 смотрят на роутеры и не могут быть административно выключены. Следовательно, они остаются во VLAN 1._  
+
   
   
 
