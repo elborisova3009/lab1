@@ -36,7 +36,8 @@ c.	Одна подсеть «Подсеть C», поддерживающая 12
 Запишу первый IP-адрес в таблице адресации для R2 G0/0/1.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20115331-1.jpg)
   
-Шаг 2.	Создам в CPT сеть согласно топологии.
+Шаг 2.	Создам в CPT сеть согласно топологии.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20175036.jpg)
   
 Шаг 3.	Произведу базовую настройку маршрутизаторов.  
   ```
@@ -97,14 +98,23 @@ end
 ```  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20141404.jpg)  
 
-Шаг 5.	Настрою G0/1 на R2, затем G0/0/0 и статическую маршрутизацию для обоих маршрутизаторов.  
+Шаг 5.	Настрою G0/0/1 на R2, затем G0/0/0 и статическую маршрутизацию для обоих маршрутизаторов.  
 Базовую настройку R2 также проведу, но отражать в данной работе не буду.    
 a.	Настрою G0/0/1 на R2 с первым IP-адресом подсети C, рассчитанным ранее.  
 b.	Настрою интерфейс G0/0/0 для каждого маршрутизатора на основе приведенной выше таблицы IP-адресации.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20113703.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20113741.jpg)  
 c.	Настрою маршрут по умолчанию на каждом маршрутизаторе, указывающий на IP-адрес G0/0/0 на другом маршрутизаторе.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20174832.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20174818.jpg)  
 d.	Проверю, что статическая маршрутизация работает с помощью пинга до адреса G0/0/1 R2 от R1.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20174849.jpg)  
 e.	Сохраню текущую конфигурацию в файл загрузочной конфигурации.  
+
+
+
   
+ 
   
   
 
