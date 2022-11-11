@@ -260,12 +260,12 @@ b.	Сохраните конфигурацию.
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20153445.jpg)  
 
 Шаг 2.	Попытка получить IP-адрес от DHCP на PC-B.  
-a.	Из командной строки компьютера PC-B выполните команду ipconfig /all.
+a.	Из командной строки компьютера PC-B выполните команду ipconfig /all.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20155801.jpg)  
 b.	После завершения процесса обновления выполните команду ipconfig для просмотра новой информации об IP-адресе.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20155821.jpg)  
 c.	Проверьте подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1 *Пинга нет, утрата логики, где IP-адрес интерфейса R1 G0/0/1???*.  
-d.	Выполните show ip dhcp binding для R1 для проверки назначений адресов в DHCP.
+d.	Выполните show ip dhcp binding для R1 для проверки назначений адресов в DHCP.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20160423.jpg)  
 e.	Выполните команду show ip dhcp server statistics для проверки сообщений DHCP.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20160548.jpg)  
