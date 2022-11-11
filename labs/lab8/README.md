@@ -31,7 +31,7 @@ b.	Одна подсеть «Подсеть B», поддерживающая 28
 c.	Одна подсеть «Подсеть C», поддерживающая 12 узлов (клиентская сеть на R2).  
 Подсеть C:  
 Запишу первый IP-адрес в таблице адресации для R2 G0/0/1.  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20115331-1.jpg)    
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20174623.jpg)  
 Шаг 2.	Создам в CPT сеть согласно топологии.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20175036.jpg)  
 Шаг 3.	Произведу базовую настройку маршрутизаторов.  
@@ -166,7 +166,7 @@ S2:
 _Столкнулась со сложностью при выполнении раздела c. Шага 7.  
 В начале работы для S2 не было задано рассчитать второй IP-адрес из подсети и указать шлюз по умолчанию. Задам их самостоятельно, по аналогии с S1, из подсети С.  
 Теперь таблица адресации выглядит следующим олбразом._  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2002-11-2022%20153112.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2011-11-2022%20174248.jpg)  
 ```  
 configure terminal 
 vlan 1
