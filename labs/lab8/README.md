@@ -1,7 +1,7 @@
-## Лабораторная работа - Настройка DHCP
+## Лабораторная работа - Настройка DHCP 
 
 
-<details><summary>1. Настройка DHCPv4</summary>
+<details><summary>1. Настройка DHCP. Реализация DHCPv4 </summary>
   
 ### Топология
 
