@@ -11,10 +11,8 @@
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2017-11-2022%20110014.jpg)
   
 ###	Задачи
-  
-  ###	Задачи
 
-<details><summary>Часть 1. Создание сети и настройка основных параметров устройства.  </summary>
+<details><summary> Часть 1. Создание сети и настройка основных параметров устройства. </summary> 
 
   Шаг 1.	Оформлю схему адресации.    
 Задам подсеть сети 192.168.1.0/24 в соответствии со следующими требованиями:  
@@ -54,31 +52,25 @@ show run
 clock set 13:30:00 Nov 01 2022
 show clock  
 ```
+ </details> 
+  
+  <details><summary> Часть 2. Проверка назначения адреса SLAAC от R1.</summary> 
+
+  </details> 
+  
+ <details><summary> Часть 3. Настройка и проверка сервера DHCPv6 без гражданства на R1.</summary> 
+
+  </details> 
+  
+  <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R1.</summary> 
+
+  </details> 
+  
+  <details><summary> Часть 5. Настройка и проверка DHCPv6 Relay на R2.</summary>
 
   </details>   
   
 
-  <details><summary> Часть 2. Проверка назначения адреса SLAAC от R1.  </summary>
-
-
-  </details>   
-  
-    <details><summary> Часть 3. Настройка и проверка сервера DHCPv6 без гражданства на R1.  </summary>
-
-
-  </details>   
-  
- <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R1. </summary>
-
-  </details>   
-  
-   <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R1. </summary>
-
-  </details>   
-  
-     <details><summary> Часть 5. Настройка и проверка DHCPv6 Relay на R2. </summary>
-
-  </details>   
   
   
 
