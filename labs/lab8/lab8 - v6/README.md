@@ -69,12 +69,3 @@ show clock
   <details><summary> Часть 5. Настройка и проверка DHCPv6 Relay на R2.</summary>
 
   </details>   
-  
-
-  
-  
-
-
-  
-  
-  
