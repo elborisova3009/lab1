@@ -14,19 +14,9 @@
 
   Шаг 1.	Создам в CPT сеть согласно заданной топологии.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20175036.jpg)  
-  Шаг 2. Настрою базовые параметры каждого коммутатора - необязательный шаг, поэтому по сокращенной программе:  
-```
-  S1:
-enable
-configure terminal
-hostname S1
-no ip domain lookup
-exit
-copy run start
-
-show run
-```
-```
+  Шаг 2. Настрою базовые параметры каждого коммутатора - необязательный шаг, поэтому по сокращенной программе.  
+  Для примера коммутатор S2:  
+   ```
 S2: 
 enable
 configure terminal
@@ -37,12 +27,9 @@ copy run start
 
 show run
 ```
-  Для примера коммутатор S2:  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170453.jpg)    
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170527.jpg)  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170539.jpg)  
-  
-Шаг 3. Произведу базовую настройку маршрутизаторов.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170539.jpg)  Шаг 3. Произведу базовую настройку маршрутизаторов.  
 a.	Назначу маршрутизаторам имя устройства.  
 b.	Отключу поиск DNS, чтобы предотвратить попытки маршрутизатора неверно преобразовывать введенные команды таким образом, как будто они являются именами узлов.  
 c.	Назначу class в качестве зашифрованного пароля привилегированного режима EXEC.  
@@ -78,6 +65,14 @@ show run
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165830.jpg)  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165912.jpg)  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165930.jpg)  
+Шаг 4. Настройка интерфейсов и маршрутизации для обоих маршрутизаторов.  
+a.	Настрою интерфейсы G0/0/0 и G0/1 на R1 и R2 с адресами IPv6, указанными в таблице выше.  
+b.	Настрою маршрут по умолчанию на каждом маршрутизаторе, который указывает на IP-адрес G0/0/0 на другом маршрутизаторе.  
+c.	Проверю работу маршрутизации с помощью пинга адреса G0/0/1 R2 из R1.  
+d.	Сохраню текущую конфигурацию в файл загрузочной конфигурации.  
+  
+  
+  
   
   
   
