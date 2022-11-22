@@ -38,18 +38,49 @@ copy run start
 show run
 ```
   Для примера коммутатор S2:  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20134726.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170453.jpg)    
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170527.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20170539.jpg)  
+  
 Шаг 3. Произведу базовую настройку маршрутизаторов.  
-Откройте окно конфигурации
-a.	Назначьте маршрутизатору имя устройства.
-b.	Отключите поиск DNS, чтобы предотвратить попытки маршрутизатора неверно преобразовывать введенные команды таким образом, как будто они являются именами узлов.
-c.	Назначьте class в качестве зашифрованного пароля привилегированного режима EXEC.
-d.	Назначьте cisco в качестве пароля консоли и включите вход в систему по паролю.
-e.	Назначьте cisco в качестве пароля VTY и включите вход в систему по паролю.
-f.	Зашифруйте открытые пароли.
-g.	Создайте баннер с предупреждением о запрете несанкционированного доступа к устройству.
-h.	Активация IPv6-маршрутизации
-i.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.
+a.	Назначу маршрутизаторам имя устройства.  
+b.	Отключу поиск DNS, чтобы предотвратить попытки маршрутизатора неверно преобразовывать введенные команды таким образом, как будто они являются именами узлов.  
+c.	Назначу class в качестве зашифрованного пароля привилегированного режима EXEC.  
+d.	Назначу cisco в качестве пароля консоли и включу вход в систему по паролю.  
+e.	Назначу cisco в качестве пароля VTY и включу вход в систему по паролю.  
+f.	Зашифрую открытые пароли.  
+g.	Создам баннер с предупреждением о запрете несанкционированного доступа к устройству.  
+h.	Активирую IPv6-маршрутизацию.  
+i.	Сохраню текущую конфигурацию в файл загрузочной конфигурации. 
+  
+   Для примера маршрутизатор R2:   
+```  
+  enable
+configure terminal
+hostname R2
+no ip domain lookup
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+service password-encryption
+banner motd #UNAUTHORIZED ACCESS PROHIBITED, GO AWAY!#
+ipv6 unicast-routing
+exit
+copy run start
+show run
+```    
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165830.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165912.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2022-11-2022%20165930.jpg)  
+  
+  
+  
 
   
 
