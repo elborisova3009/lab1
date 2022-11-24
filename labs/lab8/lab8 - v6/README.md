@@ -237,6 +237,7 @@ Ethernet adapter Ethernet0:
   
 Шаг 2. Настрою R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1.  
 a.	Настрою команду `ipv6 dhcp relay` на интерфейсе R2 G0/0/1, указав адрес назначения интерфейса G0/0/0 на R1. Также настрою команду `managed-config-flag`.  
+  
     ```  
 interface g0/0/1
 ipv6 nd managed-config-flag
