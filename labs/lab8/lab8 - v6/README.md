@@ -241,7 +241,7 @@ a.	Настрою команду `ipv6 dhcp relay` на интерфейсе R2 
 interface g0/0/1
 ipv6 nd managed-config-flag
 ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0 
-   ``` 
+   ```  
 CRT - ???  
   
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20180128.jpg)  
@@ -280,7 +280,6 @@ Ethernet adapter Ethernet0:
    NetBIOS over Tcpip. . . . . . . . : Включен
    Список поиска DNS-суффиксов подключения: STATEFUL.com  
     ```   
-  
   Из CRT - ???:  
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181020.jpg)  
 c.	Проверю подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.  
