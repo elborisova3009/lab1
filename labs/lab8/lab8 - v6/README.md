@@ -253,8 +253,7 @@ CRT - ???
 a.	Перезапущу PC-B.
 b.	Открою командную строку на PC-B и выполню команду `ipconfig /all` и проверью выходные данные, чтобы увидеть результаты операции ретрансляции DHCPv6.
 Из задания:  
-  
-```  
+  ```  
    Host Name . . . . . . . . . . . . : DESKTOP-3FR7RKA
    Primary Dns Suffix . . . . . . . : 
    Node Type . . . . . . . . . . . . : Hybrid
@@ -281,9 +280,9 @@ Ethernet adapter Ethernet0:
    DNS Servers . . . . . . . . . . . : 2001:db8:acad። 254
    NetBIOS over Tcpip. . . . . . . . : Включен
    Список поиска DNS-суффиксов подключения: STATEFUL.com  
-    ```   
+  ```  
   
-  Из CRT - ???: 
+  Из CRT - ???:  
   
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181020.jpg)  
 c.	Проверю подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.  
