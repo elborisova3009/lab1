@@ -253,38 +253,9 @@ CRT - ???
 a.	Перезапущу PC-B.
 b.	Открою командную строку на PC-B и выполню команду `ipconfig /all` и проверью выходные данные, чтобы увидеть результаты операции ретрансляции DHCPv6.
 Из задания:  
-  ```  
-   Host Name . . . . . . . . . . . . : DESKTOP-3FR7RKA
-   Primary Dns Suffix . . . . . . . : 
-   Node Type . . . . . . . . . . . . : Hybrid
-   IP Routing Enabled. . . . . . . . : No
-   WINS Proxy Enabled. . . . . . . . : No
-   DNS Suffix Search List. . . . . . : STATEFUL.com
-
-Ethernet adapter Ethernet0:
-
-   Connection-specific DNS Suffix . : STATEFUL.com
-   Description . . . . . . . . . . . : Intel(R) 852574L Gigabit Network Connection
-   Physical Address. . . . . . . . . : 00-50-56-B3-7B-06
-   DHCP Enabled. . . . . . . . . . . : Yes
-   Autoconfiguration Enabled . . . . : Yes
-   IPv6 Address. . . . . . . . . . . : 2001:db8:acad3:aaaa:7104:8b7d:5402(Preferred)
-   Lease Obtained. . . . . . . . . . : Sunday, October 6, 2019 3:27:13 PM
-   Lease Expires . . . . . . . . . . Tuesday, October 8, 2019 3:27:13 PM
-   Link-local IPv6-адрес. . . . . : fe80::a0f3:3d39:f9fb:a020%6(Preferred)
-   IPv4 Address. . . . . . . . . . . : 169.254.160.32(Preferred)
-   Subnet Mask . . . . . . . . . . . : 255.255.0.0
-   Default Gateway . . . . . . . . .: fe80። 2% 6
-   DHCPv6 IAID . . . . . . . . . . . : 50334761
-   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-24-F2-08-38-00-50-56-B3-7B-06
-   DNS Servers . . . . . . . . . . . : 2001:db8:acad። 254
-   NetBIOS over Tcpip. . . . . . . . : Включен
-   Список поиска DNS-суффиксов подключения: STATEFUL.com  
-  
-  ```  
+ ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181802.jpg)  
   
   Из CRT - ???:  
-  
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181020.jpg)  
 c.	Проверю подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.  
  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20180128.jpg)  
