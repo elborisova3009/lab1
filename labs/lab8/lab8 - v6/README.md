@@ -247,17 +247,19 @@ ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
   
 CRT - ???    
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20182403.jpg)    
- b.	Сохраните конфигурацию `copy run start`.
+ b.	Сохраню конфигурацию `copy run start`.  
 Закрою окно настройки.  
   
 Шаг 3. Попытка получить адрес IPv6 из DHCPv6 на PC-B.  
-a.	Перезапущу PC-B.
+a.	Перезапущу PC-B.  
 b.	Открою командную строку на PC-B и выполню команду `ipconfig /all` и проверью выходные данные, чтобы увидеть результаты операции ретрансляции DHCPv6.
 Из задания:  
  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181802.jpg)  
   
   Из CRT - ???:  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181020.jpg)  
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20175202.jpg)  
 c.	Проверю подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20180128.jpg)  
+ ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20183344.jpg)  
+  Пинг ходил 1/4. 
+  А потом все поломалось.  
   </details>   
