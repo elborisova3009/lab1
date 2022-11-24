@@ -238,11 +238,15 @@ Ethernet adapter Ethernet0:
 Шаг 2. Настрою R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1.  
 a.	Настрою команду `ipv6 dhcp relay` на интерфейсе R2 G0/0/1, указав адрес назначения интерфейса G0/0/0 на R1. Также настрою команду `managed-config-flag`.  
   Из задания:  
-  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181802.jpg)  
+  ```  
+copy run start
+interface g0/0/1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
+ ```   
   
 CRT - ???    
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20180128.jpg)  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20182403.jpg)    
  b.	Сохраните конфигурацию `copy run start`.
 Закрою окно настройки.  
   
