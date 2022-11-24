@@ -280,6 +280,7 @@ Ethernet adapter Ethernet0:
    DNS Servers . . . . . . . . . . . : 2001:db8:acad። 254
    NetBIOS over Tcpip. . . . . . . . : Включен
    Список поиска DNS-суффиксов подключения: STATEFUL.com  
+  
   ```  
   
   Из CRT - ???:  
