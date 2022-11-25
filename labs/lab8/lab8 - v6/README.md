@@ -94,36 +94,8 @@ d.	Сохраню текущую конфигурацию в файл загру
 В части 3 производится настройка и проверка состояния DHCP-сервера на R1. Цель состоит в том, чтобы предоставить PC-A информацию о DNS-сервере и домене.  
   
   Шаг 1. Более подробно изучу конфигурацию PC-A.  
-  a.	Выполню команду `ipconfig /all` на PC-A и посмотрю на результат. 
-  Из задания:  
-  ```  
-   Host Name . . . . . . . . . . . . : НАСТОЛЬНАЯ 3FR7RKA
-   Primary Dns Suffix . . . . . . . : 
-   Node Type . . . . . . . . . . . . : Hybrid
-   IP Routing Enabled. . . . . . . . : No
-   WINS Proxy Enabled. . . . . . . . : No
-
-Ethernet adapter Ethernet0:
-
-   Connection-specific DNS Suffix . : 
-   Description . . . . . . . . . . . : Intel(R) 852574L Gigabit Network Connection 
-   Physical Address. . . . . . . . . : 00-50-56-83-63-6D
-   IPv6 Address. . . . . . . . . . . : 2001:db8:acad:1:5c43:ee7c:2959:da68(Preferred)
-   Temporary IPv6 Address. . . . . . : 2001:db8:acad:1:3c64:e4f9:46e1:1f23(Preferred)
-   Link-local IPv6-адрес. . . . . : fe80::5c43:ee7c:2959:da68%6(Preferred)
-   IPv4 Address. . . . . . . . . . . : 169.254.218.104(Preferred)
-   Subnet Mask . . . . . . . . . . . : 255.255.0.0
-   Шлюз по умолчанию . . . . . . . . .: fe80።1%6
-   DHCPv6 IAID . . . . . . . . . . . : 50334761
-   DHCPv6 Client DUID.  . . . . . . . : 00-01-00-01-24-F5-CE-A2-00-50-56-B3-63-6D
-   DNS-серверы . . . . . . . . . . . : fec0:0:0:ffff::1%1
-                                       fec0:0:0:ffff::2%1
-                                       fec0:0:0:ffff::3%1
-   NetBIOS over Tcpip. . . . . . . . : Enabled
-   ```  
-   Из CRT (эмулируется криво или закралась ошибка???)  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20170059.jpg)  
-b.	Я должна была увидеть, что основной DNS-суффикс отсутствует. И что предоставленные адреса DNS-сервера являются адресами «локального сайта anycast», а не одноадресными адресамим, как ожидалось.  
+  a.	Выполню команду `ipconfig /all` на PC-A и посмотрю на результат. *В рамках менторской встречи конфиг был скорректирован, актуального скриншота нет.*      
+  b.	Я должна была увидеть, что основной DNS-суффикс отсутствует. И что предоставленные адреса DNS-сервера являются адресами «локального сайта anycast», а не одноадресными адресамим, как ожидалось.    
   
 Шаг 2. Настрою R1 для предоставления DHCPv6 без состояния для PC-A.  
 a.	Создам пул DHCP IPv6 на R1 с именем R1-STATELESS. В составе этого пула назначу адрес DNS-сервера как 2001:db8:acad: :1, а имя домена — stateless.com.  
@@ -138,44 +110,21 @@ R1(config)# interface g0/0/1
 R1(config-if)# ipv6 nd other-config-flag 
 R1(config-if)# ipv6 dhcp server R1-STATELESS
 ```   
-c.	Сохраню текущую конфигурацию в файл загрузочной конфигурации.  
-  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20172135.jpg)  
+*В рамках менторской встречи выяснилось, что на интерфейсе G0/0/1 маршрутизатора R1 у меня был ошибочно установлен флаг MANAGED. Отменю через no-команду в режиме глобальной конфигурации: `no ipv6 nd managed-config-flag`.*
+Проверю, что настройка стала корректной:  
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20171918.jpg)    
+  c.	Сохраню текущую конфигурацию в файл загрузочной конфигурации. 
   d.	Перезапущу PC-A.  
-  e.	Проверю вывод `ipconfig /all` и обращу внимание на изменения.  
-Из задания:  
-  ```
-   Host Name . . . . . . . . . . . . : DESKTOP-3FR7RKA
-   Primary Dns Suffix . . . . . . . : 
-   Node Type . . . . . . . . . . . . : Hybrid
-   IP Routing Enabled. . . . . . . . : No
-   WINS Proxy Enabled. . . . . . . . : No
-   DNS Suffix Search List. . . . . . : STATELESS.com
-
-Ethernet adapter Ethernet0:
-
-   Connection-specific DNS Suffix . : STATELESS.com
-   Описание . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
-   Physical Address. . . . . . . . . : 00-50-56-83-63-6D
-   DHCP Enabled. . . . . . . . . . . : Yes
-   Autoconfiguration Enabled . . . . : Yes
-   IPv6 Address. . . . . . . . . . . : 2001:db8:acad:1:5c43:ee7c:2959:da68(Preferred)
-   Temporary IPv6 Address. . . . . . : 2001:db8:acad:1:3c64:e4f9:46e1:1f23(Preferred)
-   Link-local IPv6-адрес. . . . . : fe80::5c43:ee7c:2959:da68%6(Preferred)
-   IPv4 Address. . . . . . . . . . . : 169.254.218.104(Preferred)
-   Subnet Mask . . . . . . . . . . . : 255.255.0.0
-   Default Gateway . . . . . . . . .: fe80።1%6
-   DHCPv6 IAID . . . . . . . . . . . : 50334761
-   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-24-F5-CE-A2-00-50-56-B3-63-6D
-   DNS Servers . . . . . . . . . . . : 2001:db8:acad። 254
-   NetBIOS over Tcpip. . . . . . . . : Enabled
-   Список поиска DNS-суффиксов подключения: 
-                                       STATELESS.com
- ```  
-  Из CRT:   
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20172606.jpg)  
-  f.	Пинг IP-адреса интерфейса G0/1 R2 - есть потеря пакетов.  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173553.jpg)  
+  e.	Проверю вывод `ipconfig /all` и обращу внимание на изменения.    
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20172012.jpg)  
+  f.	Пинг IP-адреса интерфейса G0/1 R2 - потеря пакетов.  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173553.jpg)  *Работа над ошибками. 
+ Отменю через no-команду в режиме глобальной конфигурации лишний неправильный маршрут, оставлю толкьо необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`. 
+*
+  
+  
+  
+  
   
   </details> 
   
