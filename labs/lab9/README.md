@@ -2,15 +2,52 @@
 
 ### Топология
 
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2031-10-2022%20132045.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20145310.jpg)
 
 ### Таблица адресации
   
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2017-11-2022%20110014.jpg)
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20150117.jpg)  
   
 ###	Задачи
 
-<details><summary> Часть 1. Создание сети и настройка основных параметров устройства. </summary> 
+
+Часть 1. Настройка основного сетевого устройства
+
+Часть 2. Настройка сетей VLAN
+
+Часть 3: Настройки безопасности коммутатора.
+
+
+
+
+<details><summary> Часть 1. Настройка основного сетевого устройства. </summary> 
+
+•	Создайте сеть.
+•	Настройте маршрутизатор R1.
+•	Настройка и проверка основных параметров коммутатора
+
+ </details> 
+  
+  <details><summary> Часть 2. Настройка сетей VLAN.</summary>  
+  
+•	Сконфигруриуйте VLAN 10.
+•	Сконфигруриуйте SVI для VLAN 10.
+•	Настройте VLAN 333 с именем Native на S1 и S2.
+•	Настройте VLAN 999 с именем ParkingLot на S1 и S2.
+</details> 
+
+ <details><summary> Часть 3. Настройки безопасности коммутатора.</summary>  
+ 
+•	Реализация магистральных соединений 802.1Q.
+•	Настройка портов доступа
+•	Безопасность неиспользуемых портов коммутатора
+•	Документирование и реализация функций безопасности порта.
+•	Реализовать безопасность DHCP snooping .
+•	Реализация PortFast и BPDU Guard
+•	Проверка сквозной связанности.
+
+</details> 
+
 
   Шаг 1.	Создам в CPT сеть согласно заданной топологии.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20175036.jpg)  
