@@ -119,25 +119,34 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20172012.jpg)  
   f.	Пинг IP-адреса интерфейса G0/1 R2 - потеря пакетов.  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173553.jpg)  
-*Работа над ошибками. Отменю через no-команду в режиме глобальной конфигурации лишний неправильный маршрут, оставлю только необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`.*  
-  Пинг IP-адреса интерфейса G0/1 R2 успешен.  
+*Работа над ошибками. На R1 обнаружен лишний неверный маршрут, который требует отмены через no-команду в режиме глобальной конфигурации.  
+Оставлю только необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`.*  
+  Теперь пинг IP-адреса интерфейса G0/1 R2 успешен.  
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2030-11-2022%20134020.jpg)  
+
+*Работа над ошибками. Кроме того, при проверке мартрутов, настроенных на R2, так же обнаружен лишний неверный маршрут. Так же отменю через no-команду в режиме глобальной конфигурации.  
+Оставлю только необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`.*   
+  
+  
+  
   </details> 
   
   <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R1.</summary> 
   
-  В части 4 настраивается R1 для ответа на запросы DHCPv6 от локальной сети на R2.  
+  В части 4 настраивается R2 (*в задании - R1, что скорректировано при работе над ошибками*) для ответа на запросы DHCPv6 от локальной сети на R2.  
 a.	Создам пул DHCPv6 на R1 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2. В составе пула задам DNS-сервер 2001:db8:acad: :254 и задам доменное имя STATEFUL.com.  
  ```  
 R1(config)# ipv6 dhcp pool R2-STATEFUL
 R1(config-dhcp)# address prefix 2001:db8:acad:3:aaa::/80
 R1(config-dhcp)# dns-server 2001:db8:acad::254
 R1(config-dhcp)# domain-name STATEFUL.com
-b.	Назначьте только что созданный пул DHCPv6 интерфейсу g0/0/0 на R1.
+b.	Назначу только что созданный пул DHCPv6 интерфейсу g0/0/0 на R1.
 R1(config)# interface g0/0/0
 R1(config-if)# ipv6 dhcp server R2-STATEFUL
    ```  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173955.jpg)  
+  
+  
 
   </details> 
   
