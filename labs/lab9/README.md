@@ -11,16 +11,14 @@
 ###	Задачи
 
 <details><summary> Часть 1. Настройка основного сетевого устройства. </summary>  
-  
-  <details><summary> •	Создам сеть.  </summary>   
+  <details><summary> Шаг 1. Создам в CPT сеть согласно топологии. </summary>    
     
-    a.	Создам сеть в CPT согласно топологии.  
-    ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919.jpg)  
+ ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919.jpg)  
+     </details>  
+  <details><summary> Шаг 2. Настрою маршрутизатор R1. </summary>  
+a.	Загружу следующий конфигурационный скрипт на R1:  
     
-    b.	Инициализация устройств
-Шаг 2. Настройте маршрутизатор R1.
-a.	Загрузите следующий конфигурационный скрипт на R1.
-Откройте окно конфигурации
+```
 enable
 configure terminal
 hostname R1
@@ -45,10 +43,19 @@ interface GigabitEthernet0/0/1
 line con 0
  logging synchronous
  exec-timeout 0 0
-b.	Проверьте текущую конфигурацию на R1, используя следующую команду:
-R1# show ip interface brief
-c.	Убедитесь, что IP-адресация и интерфейсы находятся в состоянии up / up (при необходимости устраните неполадки).
-Закройте окно настройки.
+```  
+   ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155758.jpg)  
+    
+   ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155823.jpg)    
+    
+   ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155835.jpg)  
+   
+b.	Проверю текущую конфигурацию на R1, используя команду `show ip interface brief`  
+c.	Отконтролирую, что IP-адресация применена, соответствующие интерфейсы находятся в состоянии up / up.  
+    
+    
+        </details> 
+     
 Шаг 3. Настройка и проверка основных параметров коммутатора
 a.	Настройте имя хоста для коммутаторов S1 и S2.
 Откройте окно конфигурации
