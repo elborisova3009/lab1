@@ -161,7 +161,9 @@ R2(config-if)# ipv6 dhcp server R2-STATEFUL
 а. *Так как в CPT не реализована возможность настройки проброса и R2 технически не может быть задан в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1, эта часть будет опущена.  
 b. Выше я вручную настроила маршрутизатор R2 на предоставление адреса PCB. Проверю:*  
   
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20133420.jpg)  *Обращу внимание на вывод, что используется префикс 2001:db8:acad:3::*  \
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20133420.jpg)  
+  
+  *Обращу внимание на вывод, что используется префикс 2001:db8:acad:3::*  \
  c. * Затем на PC-B проверю адрес SLAAC, который он генерирует командой `ipconfig /all`:*   
  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20133632.jpg)  
   d.	Проверю связность с помощью пинга от PCB до IP-адреса интерфейса R1 G0/0/1.  
