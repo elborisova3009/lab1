@@ -112,13 +112,18 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
 ```   
 *В рамках менторской встречи выяснилось, что на интерфейсе G0/0/1 маршрутизатора R1 у меня был ошибочно установлен флаг MANAGED. Отменю через no-команду в режиме глобальной конфигурации: `no ipv6 nd managed-config-flag`.*
 Проверю, что настройка стала корректной:  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20171918.jpg)    
-  c.	Сохраню текущую конфигурацию в файл загрузочной конфигурации. 
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20171918.jpg)  
+  
+  c.	Сохраню текущую конфигурацию в файл загрузочной конфигурации.  
   d.	Перезапущу PC-A.  
-  e.	Проверю вывод `ipconfig /all` и обращу внимание на изменения.    
+  e.	Проверю вывод `ipconfig /all` и обращу внимание на изменения.  
+  
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20172012.jpg)  
+  
   f.	Пинг IP-адреса интерфейса G0/1 R2 - потеря пакетов.  
+  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173553.jpg)  
+  
 *Работа над ошибками.  
 На R1 обнаружен лишний неверный маршрут, который требует отмены через no-команду в режиме глобальной конфигурации.  
 Оставлю только необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`.  
