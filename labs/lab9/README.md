@@ -13,7 +13,7 @@
 <details><summary> Часть 1. Настройка основного сетевого устройства. </summary>  
   <details><summary> Шаг 1. Создам в CPT сеть согласно топологии. </summary>    
     
- ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919.jpg)  
+ ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919-1.jpg)  
   <details><summary> Шаг 2. Настрою маршрутизатор R1. </summary>  
 a.	Загружу следующий конфигурационный скрипт на R1:  
     
