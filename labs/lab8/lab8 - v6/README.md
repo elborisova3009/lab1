@@ -156,78 +156,19 @@ R2(config-if)# ipv6 dhcp server R2-STATEFUL
   </details> 
   
   <details><summary> Часть 5. Настройка и проверка DHCPv6 Relay на R2.</summary>  
-В части 5 необходимо настроить и проверить ретрансляцию DHCPv6 на R2, позволяя PC-B получать адрес IPv6.  
-Так как в CPT не реализована возможность настройки проброса и R2 не может быть задан в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1, эта часть будет опущена.  
-Кроме того, вручную настрою статический адрес на PCB.   
-a.	Настройте команду ipv6 dhcp relay на интерфейсе R2 G0/0/1, указав адрес назначения интерфейса G0/0/0 на R1. Также настройте команду managed-config-flag .
-Откройте окно конфигурации
-R2 (конфигурация) # интерфейс g0/0/1
-R2(config-if)# ipv6 nd managed-config-flag
-R2(config-if)# ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
-b.	Сохраните конфигурацию.
-*
+  В части 5 по заданию было необходимо настроить и проверить ретрансляцию DHCPv6 на R2, позволяя PC-B получать адрес IPv6.  
+  
+а. *Так как в CPT не реализована возможность настройки проброса и R2 технически не может быть задан в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1, эта часть будет опущена.  
+b. Выше я вручную настроила маршрутизатор R2 на предоставление адреса PCB. Проверю:*  
+  
+![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20133420.jpg)  *Обращу внимание на вывод, что используется префикс 2001:db8:acad:3::*  \
+ c. * Затем на PC-B проверю адрес SLAAC, который он генерирует командой `ipconfig /all`:*   
+ ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20133632.jpg)  
+  d.	Проверю связность с помощью пинга от PCB до IP-адреса интерфейса R1 G0/0/1.  
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20134758.jpg)  
+  e.	Проверю связность с помощью пинга от PCA до IP-адреса интерфейса R1 G0/0/1.  
+   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20134810.jpg)  
+  
+  
+  
 
-  Шаг 1. Включу PC-B и проверю адрес SLAAC, который он генерирует командой `ipconfig /all`.    
-Из задания:  
- ```  
-   Host Name . . . . . . . . . . . . : DESKTOP-3FR7RKA
-   Primary Dns Suffix . . . . . . . : 
-   Node Type . . . . . . . . . . . . : Hybrid
-   IP Routing Enabled. . . . . . . . : No
-   WINS Proxy Enabled. . . . . . . . : No
-
-Ethernet adapter Ethernet0:
-
-   Connection-specific DNS Suffix . : 
-   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
-   Physical Address. . . . . . . . . : 00-50-56-B3-7B-06
-   DHCP Enabled. . . . . . . . . . . : Yes
-   Autoconfiguration Enabled . . . . : Yes
-   IPv6 Address. . . . . . . . . . . : 2001:db8:acad:3:a0f3:3d39:f9fb:a020(Preferred) 
-   Temporary IPv6 Address. . . . . . : 2001:db8:acad:3:d4f3:7b16:eeee:b2b5(Preferred) 
-   Link-local IPv6 address. . . . . : fe80::a0f3:3d39:f9fb:a020%6(Preferred) 
-   IPv4 Address. . . . . . . . . . . : 169.254.160.32(Preferred) 
-   Subnet Mask . . . . . . . . . . . : 255.255.0.0
-   Default Gateway . . . . . . . . .: fe80።1%6
-   DHCPv6 IAID . . . . . . . . . . . : 50334761
-   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-24-F2-08-38-00-50-56-B3-7B-06
-   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
-                                       fec0:0:0:ffff::2%1
-                                       fec0:0:0:ffff::3%1
-   NetBIOS over Tcpip. . . . . . . . : Enabled
-   ```  
-  
-  Из CRT - ???:    
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20175202.jpg)  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20175126.jpg)  
-  
-Обращу внимание на вывод, что используется префикс 2001:db8:acad:3:: - ???  
-  
-Шаг 2. Настрою R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1.  
-a.	Настрою команду `ipv6 dhcp relay` на интерфейсе R2 G0/0/1, указав адрес назначения интерфейса G0/0/0 на R1. Также настрою команду `managed-config-flag`.  
-  Из задания:  
-  ```  
-copy run start
-interface g0/0/1
-ipv6 nd managed-config-flag
-ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
- ```   
-  
-CRT - ???    
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20182403.jpg)    
- b.	Сохраню конфигурацию `copy run start`.  
-Закрою окно настройки.  
-  
-Шаг 3. Попытка получить адрес IPv6 из DHCPv6 на PC-B.  
-a.	Перезапущу PC-B.  
-b.	Открою командную строку на PC-B и выполню команду `ipconfig /all` и проверью выходные данные, чтобы увидеть результаты операции ретрансляции DHCPv6.
-Из задания:  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20181802.jpg)  
-  
-  Из CRT - ???:  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20175202.jpg)  
-c.	Проверю подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.  
- ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20183344.jpg)  
-  Пинг ходил 1/4. 
-  А потом все поломалось.  
-  </details>   
