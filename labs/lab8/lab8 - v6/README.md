@@ -112,19 +112,16 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
 ```   
 *В рамках менторской встречи выяснилось, что на интерфейсе G0/0/1 маршрутизатора R1 у меня был ошибочно установлен флаг MANAGED. Отменю через no-команду в режиме глобальной конфигурации: `no ipv6 nd managed-config-flag`.*
 Проверю, что настройка стала корректной:  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20171918.jpg)  
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20172012.jpg)  
   
   c.	Сохраню текущую конфигурацию в файл загрузочной конфигурации.  
   d.	Перезапущу PC-A.  
   e.	Проверю вывод `ipconfig /all` и обращу внимание на изменения.  
-  
-  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20172012.jpg)  
-  
+  ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2025-11-2022%20171918.jpg)  
   f.	Пинг IP-адреса интерфейса G0/1 R2 - потеря пакетов.  
   
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173553.jpg)  
-  
-*Работа над ошибками.  
+  *Работа над ошибками.  
 На R1 обнаружен лишний неверный маршрут, который требует отмены через no-команду в режиме глобальной конфигурации.  
 Оставлю только необходимый: `ipv6 route ::/0 2001:DB8:ACAD:2::2`.  
 Кроме того, при проверке всех настроенных маршрутов, на R2 тоже обнаружен лишний неверный маршрут. Аналогично отменю неверный через no-команду в режиме глобальной конфигурации.  
@@ -133,19 +130,21 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
   ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2030-11-2022%20134020.jpg)  
   </details> 
   
-  <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R2 (*задание изменено по согласованию с ментором*).</summary> 
-  
+  <details><summary> Часть 4. Настройка и проверка состояния DHCPv6 сервера на R2 (*задание изменено по согласованию с ментором*).</summary>  
   В части 4 настрою R2 для ответа на запросы DHCPv6 от локальной сети на R2.  
-a.	Создам пул DHCPv6 на R2 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2 (интерфейс, который смотрит на компьютер - то есть в сеть, где будет работать dhcp). В составе пула задам DNS-сервер 2001:db8:acad: :254 и задам доменное имя STATEFUL.com.  
- ```  
+  a.	Создам пул DHCPv6 на R2 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2 (интерфейс, который смотрит на компьютер - то есть в сеть, где будет работать dhcp). В составе пула задам DNS-сервер 2001:db8:acad: :254 и задам доменное имя STATEFUL.com.  
+  
+  ```  
 R2(config)# ipv6 dhcp pool R2-STATEFUL
 R2(config-dhcp)# address prefix 2001:db8:acad:3:aaa::/80
 R2(config-dhcp)# dns-server 2001:db8:acad::254
 R2(config-dhcp)# domain-name STATEFUL.com
+```  
 b.	Назначу только что созданный пул DHCPv6 интерфейсу g0/0/1 на R2.
-R1(config)# interface g0/0/1
-R1(config-if)# ipv6 dhcp server R2-STATEFUL
-   ```  
+```  
+R2(config)# interface g0/0/1
+R2(config-if)# ipv6 dhcp server R2-STATEFUL
+```  
 ![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/lab8%20-%20v6/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2024-11-2022%20173955.jpg)  
   
   
