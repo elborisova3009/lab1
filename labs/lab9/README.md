@@ -14,7 +14,6 @@
   <details><summary> Шаг 1. Создам в CPT сеть согласно топологии. </summary>    
     
  ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919.jpg)  
-     </details>  
   <details><summary> Шаг 2. Настрою маршрутизатор R1. </summary>  
 a.	Загружу следующий конфигурационный скрипт на R1:  
     
@@ -44,39 +43,34 @@ line con 0
  logging synchronous
  exec-timeout 0 0
 ```  
-   ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155758.jpg)  
+   ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20164858.jpg)  
     
    ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155823.jpg)    
     
    ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155835.jpg)  
    
 b.	Проверю текущую конфигурацию на R1, используя команду `show ip interface brief`  
-c.	Отконтролирую, что IP-адресация применена, соответствующие интерфейсы находятся в состоянии up / up.  
-    
-    
-        </details> 
+c.	Отконтролирую, что IP-адресация применена, а соответствующие интерфейсы находятся в состоянии up / up.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20160222.jpg)  
+
+  </details> 
+  
+   <details><summary> Шаг 3. Настройка и проверка основных параметров коммутатора. </summary>  
      
-Шаг 3. Настройка и проверка основных параметров коммутатора
-a.	Настройте имя хоста для коммутаторов S1 и S2.
-Откройте окно конфигурации
-b.	Запретите нежелательный поиск в DNS.
-c.	Настройте описания интерфейса для портов, которые используются в S1 и S2.
-d.	Установите для шлюза по умолчанию для VLAN управления значение 192.168.10.1 на обоих коммутаторах.
- </details>  
+a.	Настрою имена хостов для коммутаторов S1 и S2.  
+ ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20165957.jpg)  
+ ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20170025.jpg)  
+b.	Запрещу нежелательный поиск в DNS.  
+c.	Настрою описания интерфейсов для портов, которые используются в S1 и S2.  
+d.	Установлю для шлюза по умолчанию (для VLAN управления) значение 192.168.10.1 на обоих коммутаторах.  
+     S1:  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20172940.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20173005.jpg)  
+     S2:  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20173156.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20173128.jpg)  
+  </details>  
     
-    
-    
-  
-  •	Настрою маршрутизатор R1.  
-  
-  •	Настрою и проверю основные параметры коммутатора.  
-  
-  Шаг 1. Создайте сеть.
-  
-  
-
-  
-
  </details> 
   
   <details><summary> Часть 2. Настройка сетей VLAN.</summary>  
