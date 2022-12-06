@@ -100,6 +100,7 @@ b.	Проверю, что неиспользуемые порты отключе
 
 <details><summary> Шаг 4. Документирование и реализация функций безопасности порта. </summary>  
 Интерфейсы F0/6 на S1 и F0/18 на S2 настроены, как порты доступа.  
+
 На этом шаге я также настрою безопасность портов на этих двух портах доступа.  
   
 a.	На S1 введу команду `show port-security interface f0/6` для отображения настроек по умолчанию безопасности порта для интерфейса F0/6.  
@@ -108,6 +109,9 @@ a.	На S1 введу команду `show port-security interface f0/6` для 
 Запишу свои ответы в таблице ниже.  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20163945.jpg)  
   
+b.	На S1 включу защиту порта на F0/6 со следующими настройками:    
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20164608.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20164729.jpg)
   
   
   
