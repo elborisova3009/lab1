@@ -111,7 +111,41 @@ a.	На S1 введу команду `show port-security interface f0/6` для 
   
 b.	На S1 включу защиту порта на F0/6 со следующими настройками:    
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20164608.jpg)  
-![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20164729.jpg)
+CPT имеет ограничения функционала.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20164729.jpg)  
+  
+c.	Отображу примененные настройки безопасности порта для интерфейса F0/6.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20165337.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20170136.jpg)  
+  
+d.	На S2 включу защиту порта на F0/18.    
+Настрою каждый активный порт доступа, чтобы он автоматически добавлял адреса МАС, изученные на этом порту, в текущую конфигурацию.  
+e.	На S2 настрою следующие параметры безопасности порта F/18:  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171543-1.jpg)  
+f.	На S2 проверю функции безопасности порта F0/18.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171016.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171233.jpg)  
+ 
+</details> 
+  
+<details><summary> Шаг 5. Реализовать безопасность DHCP snooping. </summary>  
+На S2:  
+a.  Включу DHCP snooping и настрою DHCP snooping во VLAN 10.  
+b.	Настрою магистральные порты, как доверенные порты.  
+c.	Ограничу ненадежный порт Fa0/18 пятью DHCP-пакетами в секунду.
+d.	Проверю DHCP Snooping.  
+  
+  
+  
+</details> 
+
+  
+  
+  
+  
+  
+  
+  
   
   
   
