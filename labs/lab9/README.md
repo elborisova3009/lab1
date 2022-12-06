@@ -66,10 +66,9 @@ a.	Настрою все магистральные порты Fa0/1 на обо
   
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151344.jpg)  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151508.jpg)  
-  
-  
-  
-b.	Убедитесь, что режим транкинга успешно настроен на всех коммутаторах.
+ 
+b.	Убедитесь, что режим транкинга успешно настроен на всех коммутаторах.  
+ ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151757.jpg
 
  
 
