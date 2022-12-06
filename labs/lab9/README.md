@@ -11,38 +11,14 @@
 ###	Задачи
 
 <details><summary> Часть 1. Настройка основного сетевого устройства. </summary>  
-  <details><summary> Шаг 1. Создам в CPT сеть согласно топологии. </summary>    
+  
+  Шаг 1. Создам в CPT сеть согласно топологии. 
     
  ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20153919-1.jpg)  
-  <details><summary> Шаг 2. Настрою маршрутизатор R1. </summary>  
+  
+  Шаг 2. Настрою маршрутизатор R1.  
 a.	Загружу следующий конфигурационный скрипт на R1:  
-    
-```
-enable
-configure terminal
-hostname R1
-no ip domain lookup
-ip dhcp excluded-address 192.168.10.1 192.168.10.9
-ip dhcp excluded-address 192.168.10.201 192.168.10.202
-!
-ip dhcp pool Students
- network 192.168.10.0 255.255.255.0
- default-router 192.168.10.1
- domain-name CCNA2.Lab-11.6.1
-!
-interface Loopback0
- ip address 10.10.1.1 255.255.255.0
-!
-interface GigabitEthernet0/0/1
- description Link to S1
- ip dhcp relay information trusted
- ip address 192.168.10.1 255.255.255.0
- no shutdown
-!
-line con 0
- logging synchronous
- exec-timeout 0 0
-```  
+  
    ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20164858.jpg)  
     
    ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20155823.jpg)    
@@ -52,11 +28,8 @@ line con 0
 b.	Проверю текущую конфигурацию на R1, используя команду `show ip interface brief`  
 c.	Отконтролирую, что IP-адресация применена, а соответствующие интерфейсы находятся в состоянии up / up.  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20160222.jpg)  
-
-  </details> 
-  
-   <details><summary> Шаг 3. Настройка и проверка основных параметров коммутатора. </summary>  
-     
+    
+   Шаг 3. Настройка и проверка основных параметров коммутатора.    
 a.	Настрою имена хостов для коммутаторов S1 и S2.  
  ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20165957.jpg)  
  ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20170025.jpg)  
@@ -69,27 +42,36 @@ d.	Установлю для шлюза по умолчанию (для VLAN у�
      S2:  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20173156.jpg)  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2005-12-2022%20173128.jpg)  
-  </details>  
-    
+
  </details> 
   
   <details><summary> Часть 2. Настройка сетей VLAN.</summary>  
   
-•	Сконфигруриуйте VLAN 10.
-•	Сконфигруриуйте SVI для VLAN 10.
-•	Настройте VLAN 333 с именем Native на S1 и S2.
-•	Настройте VLAN 999 с именем ParkingLot на S1 и S2.
+a. Сконфигрурирую (добавлю) VLAN 10 на S1 и S2 и назову его Management.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20143733.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20143835.jpg)  
+  
+b. Сконфигурирую SVI для VLAN 10.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20144911.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20145006.jpg)  
+  
+c. На двух коммутатолрах настрою: VLAN 333 с именем Native, VLAN 999 с именем ParkingLot.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20145155.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20145304.jpg)  
+  
 </details> 
 
  <details><summary> Часть 3. Настройки безопасности коммутатора.</summary>  
+a.	Настрою все магистральные порты Fa0/1 на обоих коммутаторах для использования VLAN 333 в качестве native VLAN.  
+  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151344.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151508.jpg)  
+  
+  
+  
+b.	Убедитесь, что режим транкинга успешно настроен на всех коммутаторах.
+
  
-•	Реализация магистральных соединений 802.1Q.
-•	Настройка портов доступа
-•	Безопасность неиспользуемых портов коммутатора
-•	Документирование и реализация функций безопасности порта.
-•	Реализовать безопасность DHCP snooping .
-•	Реализация PortFast и BPDU Guard
-•	Проверка сквозной связанности.
 
 </details> 
 
