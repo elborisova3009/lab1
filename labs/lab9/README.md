@@ -62,31 +62,59 @@ c. На двух коммутатолрах настрою: VLAN 333 с имен
 </details> 
 
  <details><summary> Часть 3. Настройки безопасности коммутатора.</summary>  
+Шаг 1. Релизация магистральных соединений 802.1Q.  
+
 a.	Настрою все магистральные порты Fa0/1 на обоих коммутаторах для использования VLAN 333 в качестве native VLAN.  
   
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151344.jpg)  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151508.jpg)  
  
 b.	Убедитесь, что режим транкинга успешно настроен на всех коммутаторах.  
- ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151757.jpg
-
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20151757.jpg)  
+  
+c.	Отключу согласование DTP F0/1 на S1 и S2.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20160642.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20160807.jpg) 
+  
+d.	Проверю с помощью команды  `show interfaces `:    
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20160657.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20160817.jpg)   
  
-
+  Шаг 2. Настройка портов доступа.  
+a.	На S1 настрою F0/5 и F0/6 в качестве портов доступа и свяжу их с VLAN 10.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20161823.jpg)  
+  
+b.	На S2 настрою порт доступа Fa0/18 и свяжу его с VLAN 10.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20161907.jpg)  
+  
+  Шаг 3. Безопасность неиспользуемых портов коммутатора.   
+a.	На S1 и S2 перемещу неиспользуемые порты из VLAN 1 во VLAN 999 и отключу неиспользуемые порты.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20162445.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20162535.jpg)  
+ 
+b.	Проверю, что неиспользуемые порты отключены и связаны с VLAN 999, применив команду `show interfaces status`.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20163003.jpg)  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20163027.jpg)  
+  
 </details> 
 
+<details><summary> Шаг 4. Документирование и реализация функций безопасности порта. </summary>  
+Интерфейсы F0/6 на S1 и F0/18 на S2 настроены, как порты доступа.  
+На этом шаге я также настрою безопасность портов на этих двух портах доступа.  
+  
+a.	На S1 введу команду `show port-security interface f0/6` для отображения настроек по умолчанию безопасности порта для интерфейса F0/6.  
+Вывод команды:  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20163636.jpg)  
+Запишу свои ответы в таблице ниже.  
+![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20163945.jpg)  
+  
+  
+  
+  
+  
 
-  Шаг 1.	Создам в CPT сеть согласно заданной топологии.  
-![lab8](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab8/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2001-11-2022%20175036.jpg)  
-  Шаг 2. Настрою базовые параметры каждого коммутатора - необязательный шаг, поэтому по сокращенной программе.  
-  Для примера коммутатор S2:  
-   ```
-S2: 
-enable
-configure terminal
-hostname S2
-no ip domain lookup
-exit
-copy run start
 
-show run
-```
+  
+
+
+</details> 
