@@ -126,6 +126,12 @@ f.	На S2 проверю функции безопасности порта F0/
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171016.jpg)  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171233.jpg)  
  
+  *После применения на PCB команд `ipconfig /release` и `ipconfig /renew` 
+  ![lab9](https://user-images.githubusercontent.com/112883654/206185786-b8940c7d-5492-4710-a1cf-e5d18eab1bd9.png)
+
+
+  
+  
 </details> 
   
 <details><summary> Шаг 5. Реализовать безопасность DHCP snooping. </summary>  
