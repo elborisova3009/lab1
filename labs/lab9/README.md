@@ -126,8 +126,24 @@ f.	На S2 проверю функции безопасности порта F0/
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171016.jpg)  
 ![lab9](https://github.com/elborisova3009/otus-networks/blob/master/labs/lab9/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2006-12-2022%20171233.jpg)  
  
-  *После применения на PCB команд `ipconfig /release` и `ipconfig /renew` 
-  ![lab9](https://user-images.githubusercontent.com/112883654/206185786-b8940c7d-5492-4710-a1cf-e5d18eab1bd9.png)
+  *После применения на PCB команд `ipconfig /release` и `ipconfig /renew` картина следующая:  
+  ![lab9](https://user-images.githubusercontent.com/112883654/206185786-b8940c7d-5492-4710-a1cf-e5d18eab1bd9.png)  
+  В рамках менторской встречи выснилось, что на Шаге 2 в части a. не отработала команда `ip dhcp relay information trusted` (что есть результат ограниченного функционала CPT). Как следствие, не включилось "доверие" к опции 82 - проявилось в выводе команды `show ip dhcp snooping` на коммутаторе S2:    
+![lab9](https://user-images.githubusercontent.com/112883654/206187382-a6537f86-eb12-48ab-85db-fd7ddba2e1c7.png)  
+Требуется на коммутаторе S2 выключить данную опцию: 
+![lab9](https://user-images.githubusercontent.com/112883654/206188472-cecc99c2-e033-4f87-a427-79c91148f67f.png)  
+  В итоге на PCB успешно отработал DHCP:*  
+![lab9](![image](https://user-images.githubusercontent.com/112883654/206188649-0cd81623-ddfa-41f9-ac23-41b0e04b3d6d.png)  
+  
+  
+
+
+  
+  
+
+ 
+
+
 
 
   
