@@ -131,24 +131,29 @@ f.	На S2 проверю функции безопасности порта F0/
 <details><summary> Шаг 5. Реализовать безопасность DHCP snooping. </summary>  
 На S2:  
 a.  Включу DHCP snooping и настрою DHCP snooping во VLAN 10.  
+  
 ![lab9](https://user-images.githubusercontent.com/112883654/206735037-af6e2f23-d673-48ba-bb25-f0c3e1016e7a.png)  
+  
 b.	Настрою магистральные порты, как доверенные порты.  
-![lab9](https://user-images.githubusercontent.com/112883654/206735318-7dbcfd1c-177e-45fa-a57d-bda2fc10f644.png)
-
+  ![lab9](https://user-images.githubusercontent.com/112883654/206735318-7dbcfd1c-177e-45fa-a57d-bda2fc10f644.png)  
   
 c.	Ограничу ненадежный порт Fa0/18 пятью DHCP-пакетами в секунду.  
+  ![Скриншот 09-12-2022 182725](https://user-images.githubusercontent.com/112883654/206735949-0ec79048-dbe8-4518-8fa3-1c9ec89ba778.jpg)  
+  
 d.	Проверю DHCP Snooping.  
+ ![Скриншот 09-12-2022 182838](https://user-images.githubusercontent.com/112883654/206736580-b15591bf-6046-49f7-98d4-84400596b955.jpg)  
   
-  
-  
-  
-    *После применения на PCB команд `ipconfig /release` и `ipconfig /renew` картина следующая:  
+e.	В командной строке на PC-B освобожу, а затем обновлю IP-адрес:  
+![Скриншот 09-12-2022 183221](https://user-images.githubusercontent.com/112883654/206737061-8b0daee7-9028-4011-8c1d-836010cfc501.jpg)  
+  *После применения команды `ipconfig /renew` процесс стопорится. На PCB возникает следующая картина:*  
   ![lab9](https://user-images.githubusercontent.com/112883654/206185786-b8940c7d-5492-4710-a1cf-e5d18eab1bd9.png)  
-  В рамках менторской встречи выснилось, что на Шаге 2 в части a. не отработала команда `ip dhcp relay information trusted` (что есть результат ограниченного функционала CPT). Как следствие, не включилось "доверие" к опции 82 - проявилось в выводе команды `show ip dhcp snooping` на коммутаторе S2:    
+  *В рамках менторской встречи выснилось, что на Шаге 2 в части a. не отработала команда `ip dhcp relay information trusted` (что есть результат ограниченного функционала CPT). Как следствие, не включилось "доверие" к опции 82. Это проявилось в выводе команды `show ip dhcp snooping` на коммутаторе S2:*    
 ![lab9](https://user-images.githubusercontent.com/112883654/206187382-a6537f86-eb12-48ab-85db-fd7ddba2e1c7.png)  
-Требуется на коммутаторе S2 выключить данную опцию: 
+*Требуется на коммутаторе S2 выключить данную опцию:*  
+  
 ![lab9](https://user-images.githubusercontent.com/112883654/206188472-cecc99c2-e033-4f87-a427-79c91148f67f.png)  
-  В итоге на PCB успешно отработал DHCP:*  
+  
+  В итоге на PCB успешно отработал DHCP:  
 ![lab9](![image](https://user-images.githubusercontent.com/112883654/206188649-0cd81623-ddfa-41f9-ac23-41b0e04b3d6d.png)  
   
   
