@@ -131,7 +131,11 @@ f.	На S2 проверю функции безопасности порта F0/
 <details><summary> Шаг 5. Реализовать безопасность DHCP snooping. </summary>  
 На S2:  
 a.  Включу DHCP snooping и настрою DHCP snooping во VLAN 10.  
+![lab9](https://user-images.githubusercontent.com/112883654/206735037-af6e2f23-d673-48ba-bb25-f0c3e1016e7a.png)  
 b.	Настрою магистральные порты, как доверенные порты.  
+![lab9](https://user-images.githubusercontent.com/112883654/206735318-7dbcfd1c-177e-45fa-a57d-bda2fc10f644.png)
+
+  
 c.	Ограничу ненадежный порт Fa0/18 пятью DHCP-пакетами в секунду.  
 d.	Проверю DHCP Snooping.  
   
