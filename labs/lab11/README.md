@@ -24,6 +24,11 @@ h.	Сохраню текущую конфигурацию в файл загру
 ![image](https://user-images.githubusercontent.com/112883654/208090011-5796f3ae-9e01-48b9-8f58-599be18b19aa.png)  
 ![image](https://user-images.githubusercontent.com/112883654/208090097-ba4e23b8-107d-4ea1-a091-03573a084da2.png)  
  
+![image](https://user-images.githubusercontent.com/112883654/208091005-4418a724-28d3-451f-b9c0-3232bb810ea9.png)  
+![image](https://user-images.githubusercontent.com/112883654/208091060-316466fe-cf47-4508-88de-f678c50359db.png)  
+![image](https://user-images.githubusercontent.com/112883654/208091117-438fb826-62fa-4314-81b6-c62f86694dc9.png)  
+
+ 
 Шаг 3. Настройте базовые параметры каждого коммутатора.
 Откройте окно конфигурации
 a.	Присвойте коммутатору имя устройства.
