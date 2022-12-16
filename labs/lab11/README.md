@@ -7,7 +7,7 @@
 ### Таблица VLAN  
 ![lab11](https://user-images.githubusercontent.com/112883654/208080441-466b59a3-0fea-4460-ae58-6a7b43925ed5.png)  
 ### Задачи  
-<details><summary> Часть 1. Создание сети и настройка основных параметров устройства. </summary>  
+<details><summary> Раздел 1. Создание сети и настройка основных параметров устройства. </summary>  
  Шаг 1. В CPT создам сеть согласно топологии.  
  
  ![lab11](https://user-images.githubusercontent.com/112883654/208088577-573b69a8-2add-40c7-8581-f8f258f8ae78.png)  
@@ -44,13 +44,36 @@ h.	Сохраню текущую конфигурацию в файл загру
  S2:  
  ![image](https://user-images.githubusercontent.com/112883654/208092678-dc9217c1-c1b7-4c11-b6f5-89c64ad424da.png)  
 ![image](https://user-images.githubusercontent.com/112883654/208092739-75e86dc3-c58c-4c68-9a7f-23a8f2142ace.png)  
+</details> 
+
+<details><summary> Раздел 2. Настройка и проверка списков расширенного контроля доступа. </summary>  
+ 
+ Часть 2. Настройка сетей VLAN на коммутаторах.  
+Шаг 1. Создам сети VLAN на коммутаторах.  
+a.	Создам VLAN по заданию, назову их в соотвтетствии с таблицей VLAN.    
+ S1:  
+ ![image](https://user-images.githubusercontent.com/112883654/208094534-d9d192af-60df-4751-9221-911ee44258c2.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208094574-fff4bbed-4529-471b-b1a1-55674d3765ac.png)  
+S2:  
+ ![image](https://user-images.githubusercontent.com/112883654/208095107-c2280b7f-fbde-4088-b79c-00ff4c372aa7.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208095228-b6c24d28-d88b-4f79-9dc4-13ff62c1f25e.png)  
+ b.	Настрою интерфейс управления и шлюз по умолчанию на каждом коммутаторе, используя информацию об IP-адресе в таблице адресации.  
+ 
+ ![image](https://user-images.githubusercontent.com/112883654/208095566-8722ec69-5062-42fd-aff0-161bb4de8252.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208095796-e150f3c8-57e7-4499-98f3-8a74eb7c354d.png)  
+ 
 
  
+c.	Назначу все неиспользуемые порты коммутатора VLAN Parking Lot, настрою их для статического режима доступа и административно деактивирую их (`interface range`).  
  
- </details> 
-
-<details><summary> Часть 2. Настройка и проверка списков расширенного контроля доступа. </summary>  
-
+ 
+ 
+Шаг 2. Назначьте сети VLAN соответствующим интерфейсам коммутатора.
+a.	Назначьте используемые порты соответствующей VLAN (указанной в таблице VLAN выше) и настройте их для режима статического доступа.
+b.	Выполните команду show vlan brief, чтобы убедиться, что сети VLAN назначены правильным интерфейсам.
+ 
+ 
+ 
  </details> 
 
 
