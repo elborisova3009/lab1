@@ -130,6 +130,11 @@ b.	Настрою R1 для проверки подлинности пользо
  
  ### Часть 6. Проверка подключения.  
 Шаг 1. Настрою узлы ПК согласно таблице адресации.  
+ ![image](https://user-images.githubusercontent.com/112883654/208671491-7f4ea02d-f064-4ca5-a556-5266c6ec32ed.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208671697-fd84d020-29ed-4f97-95a0-dbbb5878512a.png)
+
+
+
 Шаг 2. Выполню следующие тесты:  
 ![image](https://user-images.githubusercontent.com/112883654/208667443-d626c6b3-de92-4602-9655-1c4cb278a97e.png)  
 
