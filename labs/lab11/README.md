@@ -131,12 +131,18 @@ b.	Настрою R1 для проверки подлинности пользо
  ### Часть 6. Проверка подключения.  
 Шаг 1. Настрою узлы ПК согласно таблице адресации.  
  ![image](https://user-images.githubusercontent.com/112883654/208671830-b9021fa0-c840-4a5c-aebc-bfe5d5099021.png)  
- ![image](https://user-images.githubusercontent.com/112883654/208671697-fd84d020-29ed-4f97-95a0-dbbb5878512a.png)
-
-
-
+ ![image](https://user-images.githubusercontent.com/112883654/208671697-fd84d020-29ed-4f97-95a0-dbbb5878512a.png)  
 Шаг 2. Выполню следующие тесты:  
-![image](https://user-images.githubusercontent.com/112883654/208667443-d626c6b3-de92-4602-9655-1c4cb278a97e.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208667443-d626c6b3-de92-4602-9655-1c4cb278a97e.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208672563-ce552fb6-b28e-4afd-b651-f0b4a9cc280a.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208673482-242cc7da-377f-45cc-8551-b425ed1f4f6b.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208674762-1346711d-a75c-44d9-84a1-236e0de74d17.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/208674902-1ae331ca-3d3d-4a53-a78d-c9faceb63e65.png) 
+ 
+ 
+ 
+
+
 
 </details> 
 
