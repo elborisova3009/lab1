@@ -65,29 +65,92 @@ e.	Задам внешний (outside) интерфейс.
  Шаг 2. Проверю конфигурацию.  
  a.	С PC-B отправлю эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.   
  ![image](https://user-images.githubusercontent.com/112883654/212670242-6b8a8bf4-7ecc-424a-88cc-10f3abe385f1.png)  
- На R1 отображу таблицу NAT с помощью команды `show ip nat translations`.  
- ![image](https://user-images.githubusercontent.com/112883654/212674940-44f105ce-c6e5-46a3-8581-3d3de0e18c11.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
+ ![image](https://user-images.githubusercontent.com/112883654/212683239-f8107cc6-9796-49e2-a7b0-2c4f8f5286e3.png)  
  Вопросы:
 Во что был транслирован внутренний локальный адрес PC-B? *209.165.200.226*  
 Какой тип адреса NAT является переведенным адресом? *Inside Global*  
  
 b.	С PC-A отправлю эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.  
  ![image](https://user-images.githubusercontent.com/112883654/212675755-09d28f6e-fc10-49b3-82bc-96daae7e2601.png)  
- На R1 отображу таблицу NAT с помощью команды `show ip nat translations`.  
- ![image](https://user-images.githubusercontent.com/112883654/212676562-c76b9ae7-3998-43c2-b3b0-03a60f0171a9.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
+![image](https://user-images.githubusercontent.com/112883654/212683419-f3ebb3de-7bae-400f-b521-09ea2c1b3cb2.png)   
  
-c.	Обратите внимание, что предыдущая трансляция для PC-B все еще находится в таблице. Из S1, эхо-запрос интерфейса Lo1 (209.165.200.1) на R2. Если эхо-запрос не прошел, выполните отладку. На R1 отобразите таблицу NAT на R1 с помощью команды show ip nat translations.
+c.	Обращу внимание, что предыдущая трансляция для PC-B все еще находится в таблице. 
+Направлю c S1 эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.  
+ ![image](https://user-images.githubusercontent.com/112883654/212677027-be0997dc-f05b-4bda-936f-740fc7eb4af6.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
+ ![image](https://user-images.githubusercontent.com/112883654/212683852-7f3bb502-907d-498a-bad4-1259a27651a0.png)  
+
+ d.	Направлю c S2 эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.  
+ На этот раз перевод завершается неудачей:  
+ ![image](https://user-images.githubusercontent.com/112883654/212679540-3cb4d2d9-052f-4a66-9395-df2012401590.png)  
  
-
+ e.	Это ожидаемый результат, потому что выделено только 3 адреса, а мы направили эхо-запрос с четырех устройств. Напомним, что NAT — это трансляция «один-в-один».  
+ Как много выделено трансляций, можно узнать при выводе команды `show ip nat translations verbose`. Учитывая ограниченный функционал CPT, примем за данность, что ответ будет 24 часа.  
+ ![image](https://user-images.githubusercontent.com/112883654/212680395-df689cd8-8c2e-4887-ba3f-e9d3fff818c9.png)  
  
- 
-
-
-
-
+ f.	Учитывая, что пул ограничен тремя адресами, NAT для пула адресов недостаточен для нашего приложения. Требуется очистить преобразование NAT и статистику прежде, чем мы перейдем к PAT.  
+ Учитывая ограниченный функционал CPT:  
+ ![image](https://user-images.githubusercontent.com/112883654/212680923-609489fa-ede0-409d-9430-efbf80b6ba9d.png)  
 </details> 
 
-<details><summary>Часть 3. Настройка и проверка PAT для IPv4.</summary> 
+<details><summary>Часть 3. Настройка и проверка PAT для IPv4.</summary>  
+В данной части необходимо настроить замену NAT на PAT в пул адресов, а затем на PAT с помощью интерфейса.  
+ 
+Шаг 1. Удалю команду преобразования на R1.  
+Чтобы начать работу в части 3, удалю команду, связывающую ACL и пул вместе.  
+
+Шаг 2. Добавлю команду PAT на R1.  
+ Теперь настрою преобразование PAT в пул адресов (ACL и Pool уже настроены, так что это единственная команда, которую нужно изменить с NAT на PAT).  
+ ![image](https://user-images.githubusercontent.com/112883654/212681940-d8b815e3-8b90-4cf1-8fb2-e2fb2cc5a2d3.png)  
+a. Проверю, что PAT работает.  
+С PC-B запущу эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.  
+![image](https://user-images.githubusercontent.com/112883654/212682601-ef349e2b-5028-4cce-9af4-8506d503a3b0.png)  
+ 
+На R1 отображу таблицу NAT на R1 с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212682729-4c7dbb89-fadd-411b-bf07-acce6c4f7a25.png)  
+ Вопросы:  
+ Во что был транслирован внутренний локальный адрес PC-B? *209.165.200.226*  
+ Какой тип адреса NAT является переведенным адресом? *Inside Global*  
+ Чем отличаются выходные данные команды `show ip nat translations` из упражнения NAT? *В данном случае разницы между внутренним и внешним адресом нет.*  
+ 
+ b.	С PC-A запущу эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.  
+ ![image](https://user-images.githubusercontent.com/112883654/212685541-437b8edd-10fa-4980-8f8d-b09c8846ad2a.png)  
+ На R1 отображу таблицу NAT на R1 с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212686579-0787d3f6-cff4-4856-a476-862b5738bb5c.png)  
+
+ Обраoe внимание, что при повторной отправке эхо-запроса и быстром возврате к маршрутизатору есть изменения:  
+ ![image](https://user-images.githubusercontent.com/112883654/212686758-ffb166ae-1b70-4dbb-81da-c3069ad27667.png)  
+ 
+ Учитывая ограниченный функционал CPT, примем за данность, что вывод команды `show ip nat translations verbose` должен показать сменц времени ожидания перевода с 24 часов до 1 минуты.  
+ ![image](https://user-images.githubusercontent.com/112883654/212687566-f0492cec-c316-4a89-9f7d-b271131e0345.png)  
+ 
+ c.	Генерирую трафик с нескольких устройств для наблюдения PAT.    
+ На PC-A и PC-B использую параметр -t с командой ping, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1). 
+ PC-A:  
+ ![image](https://user-images.githubusercontent.com/112883654/212688259-3787c06e-7a6e-4347-b394-d67efed77053.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/212688303-a339e556-08be-41af-98d2-6701d7c3acd1.png)  
+ PC-B:  
+ ![image](https://user-images.githubusercontent.com/112883654/212688442-ce589a53-511e-44bc-ab23-430388826416.png)  
+ ![image](https://user-images.githubusercontent.com/112883654/212688485-f2bec3a2-410c-4adf-9053-1a9ed8d2345c.png)  
+ ), затем вернитесь к R1 и выполните команду show ip nat translations:
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ затем вернитесь к R1 и выполните команду show ip nat translations:
+
+ 
+ 
+ 
 
 </details> 
 
