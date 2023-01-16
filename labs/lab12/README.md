@@ -62,18 +62,25 @@ c.	Настрою перевод, связывая ACL и пул с процес
 d.	Задам внутренний (inside) интерфейс.  
 e.	Задам внешний (outside) интерфейс.  
 ![image](https://user-images.githubusercontent.com/112883654/212657761-66dace49-b460-4268-a158-7ee897e48f9f.png)  
+ Шаг 2. Проверю конфигурацию.  
+ a.	С PC-B отправлю эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.   
+ ![image](https://user-images.githubusercontent.com/112883654/212670242-6b8a8bf4-7ecc-424a-88cc-10f3abe385f1.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`.  
+ ![image](https://user-images.githubusercontent.com/112883654/212674940-44f105ce-c6e5-46a3-8581-3d3de0e18c11.png)  
+ Вопросы:
+Во что был транслирован внутренний локальный адрес PC-B? *209.165.200.226*  
+Какой тип адреса NAT является переведенным адресом? *Inside Global*  
+ 
+b.	С PC-A отправлю эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.  
+ ![image](https://user-images.githubusercontent.com/112883654/212675755-09d28f6e-fc10-49b3-82bc-96daae7e2601.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`.  
+ ![image](https://user-images.githubusercontent.com/112883654/212676562-c76b9ae7-3998-43c2-b3b0-03a60f0171a9.png)  
+ 
+c.	Обратите внимание, что предыдущая трансляция для PC-B все еще находится в таблице. Из S1, эхо-запрос интерфейса Lo1 (209.165.200.1) на R2. Если эхо-запрос не прошел, выполните отладку. На R1 отобразите таблицу NAT на R1 с помощью команды show ip nat translations.
+ 
 
-Шаг 2. Проверю конфигурацию.  
-
-
-
-
-
-
-
-
-
-
+ 
+ 
 
 
 
