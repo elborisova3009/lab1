@@ -129,14 +129,18 @@ a. Проверю, что PAT работает.
  c.	Генерирую трафик с нескольких устройств для наблюдения PAT.    
  На PC-A и PC-B использую параметр -t с командой ping, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1). 
  PC-A:  
- ![image](https://user-images.githubusercontent.com/112883654/212688259-3787c06e-7a6e-4347-b394-d67efed77053.png)  
- ![image](https://user-images.githubusercontent.com/112883654/212688303-a339e556-08be-41af-98d2-6701d7c3acd1.png)  
+![image](https://user-images.githubusercontent.com/112883654/212689277-c3d8846a-b307-483d-8e96-ec052843b134.png)  
  PC-B:  
- ![image](https://user-images.githubusercontent.com/112883654/212688442-ce589a53-511e-44bc-ab23-430388826416.png)  
- ![image](https://user-images.githubusercontent.com/112883654/212688485-f2bec3a2-410c-4adf-9053-1a9ed8d2345c.png)  
- ), затем вернитесь к R1 и выполните команду show ip nat translations:
+![image](https://user-images.githubusercontent.com/112883654/212689326-91a85703-47a7-41c1-b38d-f787bd449c4c.png)  
+ Вернусь на R1 и отображу таблицу NAT на R1 с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212689230-bb0d49a4-203c-420b-a94d-928b20b6a1e6.png)  
+ Обращу внимание, что внутренний глобальный адрес одинаков для обоих сеансов.  
  
-
+ Вопрос:  
+ Как маршрутизатор отслеживает, куда идут ответы? *Присваиваются уникальные номера портов.*  
+ 
+d.	PAT в пул является очень эффективным решением для малых и средних организаций. Тем не менее, есть неиспользуемые адреса IPv4, задействованные в этом сценарии.  
+Мы перейдем к PAT с перегрузкой интерфейса, чтобы устранить эту трату IPv4 адресов. Остановите ping на PC-A и PC-B с помощью комбинации клавиш Control-C, затем очистите трансляции и статистику ()
 
  
  
