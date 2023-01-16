@@ -176,10 +176,8 @@ d.	PAT в пул является очень эффективным решени
  ![image](https://user-images.githubusercontent.com/112883654/212705114-57ef1d72-7df6-46a2-bf0f-60e3b10f8080.png)  
  Затем вернусь к R1 и отображу таблицу NAT на R1 с помощью команды `show ip nat translations`:  
  ![image](https://user-images.githubusercontent.com/112883654/212705394-31225e9a-d76c-4a4c-9ea9-84573585dfb0.png)  
- 
  Теперь все внутренние глобальные адреса сопоставляются с IP-адресом интерфейса g0/0/0.  
  Остановлю все пинги на PC-A и PC-B.  
-
 </details> 
 
 <details><summary>Часть 4. Настройка и проверка статического NAT для IPv4.</summary> 
