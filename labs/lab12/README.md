@@ -65,22 +65,24 @@ e.	Задам внешний (outside) интерфейс.
  Шаг 2. Проверю конфигурацию.  
  a.	С PC-B отправлю эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.   
  ![image](https://user-images.githubusercontent.com/112883654/212670242-6b8a8bf4-7ecc-424a-88cc-10f3abe385f1.png)  
- На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
- ![image](https://user-images.githubusercontent.com/112883654/212683239-f8107cc6-9796-49e2-a7b0-2c4f8f5286e3.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212898072-8c092fde-c3b4-424e-b186-c44abcd958aa.png)
+ 
  Вопросы:
 Во что был транслирован внутренний локальный адрес PC-B? *209.165.200.226*  
 Какой тип адреса NAT является переведенным адресом? *Inside Global*  
  
 b.	С PC-A отправлю эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.  
  ![image](https://user-images.githubusercontent.com/112883654/212675755-09d28f6e-fc10-49b3-82bc-96daae7e2601.png)  
- На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
-![image](https://user-images.githubusercontent.com/112883654/212683419-f3ebb3de-7bae-400f-b521-09ea2c1b3cb2.png)   
- 
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212898596-22f77438-78f5-4ca7-84e7-2d885c79ff7e.png)
+
+
 c.	Обращу внимание, что предыдущая трансляция для PC-B все еще находится в таблице. 
 Направлю c S1 эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.  
  ![image](https://user-images.githubusercontent.com/112883654/212677027-be0997dc-f05b-4bda-936f-740fc7eb4af6.png)  
- На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:    
- ![image](https://user-images.githubusercontent.com/112883654/212683852-7f3bb502-907d-498a-bad4-1259a27651a0.png)  
+ На R1 отображу таблицу NAT с помощью команды `show ip nat translations`:  
+ ![image](https://user-images.githubusercontent.com/112883654/212898754-fea96832-d1af-4f3e-a1ba-6a0c2d4b3b6f.png)
 
  d.	Направлю c S2 эхо-запрос на интерфейс Lo1 (209.165.200.1) на R2.  
  На этот раз перевод завершается неудачей:  
