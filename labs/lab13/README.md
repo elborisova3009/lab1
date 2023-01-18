@@ -44,12 +44,19 @@
    Команды конфигурирования:  
   ![image](https://user-images.githubusercontent.com/112883654/213114838-950cfc89-b588-4a4c-861e-e1cacd68a862.png)  
   ![image](https://user-images.githubusercontent.com/112883654/213114890-474d9f0c-67c7-4ee4-90ac-3a06a6b9133c.png)
-
-
-
 </details> 
 
 <details><summary>Часть 2. Обнаружение сетевых ресурсов с помощью протокола CDP.</summary>  
+  На устройствах Cisco протокол CDP включен по умолчанию. Воспользуюсь CDP, чтобы обнаружить порты, к которым подключены кабели.  
+a.	На R1 использую соответствующую команду `show cdp`, чтобы определить, сколько интерфейсов включено CDP, сколько из них включено и сколько отключено. 
+  
+  ![image](https://user-images.githubusercontent.com/112883654/213165298-b11fa9d7-4ac3-4ca0-be67-9b52fbd8d86a.png)  
+  
+  ![image](https://user-images.githubusercontent.com/112883654/213165377-b6ad0cf6-7f67-46f0-8cb7-775ac26f9699.png)
+с:
+Сколько интерфейсов участвует в объявлениях CDP? Какие из них активны?
+Введите ваш ответ здесь.
+
 
 </details> 
 
