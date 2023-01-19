@@ -24,9 +24,11 @@
   i.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.
 
   Команды конфигурирования:  
-  ![image](https://user-images.githubusercontent.com/112883654/213111360-4bedecd0-ed5d-4660-9c15-aafa0a263ac7.png)
- 
-Шаг 3. Настрою базовые параметры каждого коммутатора.  
+  ![image](https://user-images.githubusercontent.com/112883654/213406004-a07ac578-ac7d-443b-b213-cf6b7367fad9.png)  
+  ![image](https://user-images.githubusercontent.com/112883654/213406147-39ad1128-dd6c-4f93-8efe-7b036a2284b4.png)  
+  ![image](https://user-images.githubusercontent.com/112883654/213111360-4bedecd0-ed5d-4660-9c15-aafa0a263ac7.png)  
+  
+  Шаг 3. Настрою базовые параметры каждого коммутатора.  
   
   Задание:  
   a.	Присвойте коммутатору имя устройства.  
