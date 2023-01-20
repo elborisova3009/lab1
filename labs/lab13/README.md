@@ -92,7 +92,20 @@
   ![image](https://user-images.githubusercontent.com/112883654/213701541-2300c859-09d0-4dc7-977e-4094bce2c6f6.png)  
   ![image](https://user-images.githubusercontent.com/112883654/213703307-58d1f47a-efd0-4283-81b0-9b80e5822bde.png)  
   
+  Шаг 2. Установлю время.  
+  С помощью команды clock set установите время на маршрутизаторе R1. Введенное время должно быть в формате UTC.  
+  ![image](https://user-images.githubusercontent.com/112883654/213705107-d204c8a6-c6c0-47d3-8fe8-1fe80f8d08d8.png)  
   
+  Шаг 3. Настрою главный сервер NTP в качестве хозяина NTP с уровнем слоя 4.  
+  ![image](https://user-images.githubusercontent.com/112883654/213705635-faef14b1-6a19-4b02-af49-7e10ba964bd0.png)  
+  
+  Шаг 4. Настрою клиент NTP.  
+  a.	Выполню соответствующую команду на S1 и S2, чтобы просмотреть настроенное время. Запишу текущее время в таблице.  
+  
+  
+
+
+
 
 
   
