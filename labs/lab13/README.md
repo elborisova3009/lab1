@@ -23,9 +23,7 @@
   h.	Настройка интерфейсов, перечисленных в таблице выше.  
   i.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.
 
-  Команды конфигурирования:  
-  ![image](https://user-images.githubusercontent.com/112883654/213406004-a07ac578-ac7d-443b-b213-cf6b7367fad9.png)  
-  ![image](https://user-images.githubusercontent.com/112883654/213406147-39ad1128-dd6c-4f93-8efe-7b036a2284b4.png)  
+  Команды конфигурирования:   
   ![image](https://user-images.githubusercontent.com/112883654/213111360-4bedecd0-ed5d-4660-9c15-aafa0a263ac7.png)  
   
   Шаг 3. Настрою базовые параметры каждого коммутатора.  
@@ -63,16 +61,25 @@
 
 <details><summary>Часть 3. Обнаружение сетевых ресурсов с помощью протокола LLDP.</summary>  
   На устройствах Cisco протокол LLDP может быть включен по умолчанию. Воспользуюсь LLDP, чтобы обнаружить порты, к которым подключены кабели.  
+  
   a.	Введу соответствующую команду `lldp run`, чтобы включить LLDP на всех устройствах в топологии.  
+  ![image](https://user-images.githubusercontent.com/112883654/213406004-a07ac578-ac7d-443b-b213-cf6b7367fad9.png)  
+  ![image](https://user-images.githubusercontent.com/112883654/213406147-39ad1128-dd6c-4f93-8efe-7b036a2284b4.png)  
+  ![image](https://user-images.githubusercontent.com/112883654/213403830-4e3d97c6-1654-4266-a2d2-8e587bd36c6d.png)  
   
+  b.	На S1 выполню соответствующую команду `show lldp entry S2`, чтобы предоставить подробную информацию о S2.  
+  Ограничения CPT:  
+  ![image](https://user-images.githubusercontent.com/112883654/213688582-5db79f4f-f62c-4c19-9438-ea5f3ed9c7c1.png)  
+  Приму за данность:  
+  ![image](https://user-images.githubusercontent.com/112883654/213688791-c90d9d02-2bb0-4273-8eed-220936546cb0.png)  
+  Вопрос:  
+  Что такое chassis ID  для коммутатора S2?  
+  *В данном случае, это с025.5cd7.ef00 - MAC-адрес коммутатора S2, находящегося за портом Fa0/1.*  
   
- ![image](https://user-images.githubusercontent.com/112883654/213403830-4e3d97c6-1654-4266-a2d2-8e587bd36c6d.png)
- 
-  
-  
-  
-  b.	На S1 выполню соответствующую команду `lldp`, чтобы предоставить подробную информацию о S2.  
-  
+  c. Соединюсь "через консоль" на всех устройствах и использую команды LLDP, необходимые для отображения топологии физической сети только из выходных данных команды show.  
+  Основной командой является `show lldp neighbors`, которая позволяет визуализировать топологию сети 
+   The idea is for the student to visualize the network topology from only the LLDP outputs.
+  `show lldp neighbors`
   
 
 </details> 
