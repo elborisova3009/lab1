@@ -77,9 +77,13 @@
   *В данном случае, это с025.5cd7.ef00 - MAC-адрес коммутатора S2, находящегося за портом Fa0/1.*  
   
   c. Соединюсь "через консоль" на всех устройствах и использую команды LLDP, необходимые для отображения топологии физической сети только из выходных данных команды show.  
-  Основной командой является `show lldp neighbors`, которая позволяет визуализировать топологию сети 
-   The idea is for the student to visualize the network topology from only the LLDP outputs.
-  `show lldp neighbors`
+  Основной командой является `show lldp neighbors`, которая позволяет визуализировать топологию сети только на основе выходных данных LLDP.  
+  
+  ![image](https://user-images.githubusercontent.com/112883654/213690726-7e093ae7-97cb-4b87-b208-b240c30642f2.png)
+
+![image](https://user-images.githubusercontent.com/112883654/213690866-9b690a5e-8ae0-43da-9f0c-1c84e74dc9bb.png)
+
+ 
   
 
 </details> 
